@@ -1,8 +1,8 @@
-# Gastrodon
+# Sea Slug
 
-![center](https://github.com/user-attachments/assets/0d44e306-dabb-4392-a68d-8f7e3e911c06)
+![Sea Slug — a soft pastel Obsidian theme; illustrative notes UI](assets/sea-slug-social.png)
 
-A practical remix of [Chime](https://github.com/Bluemoondragon07/chime-theme) for Obsidian 1.13+. [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is recommended.
+Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](https://github.com/Bluemoondragon07/chime-theme) for Obsidian 1.13+. [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is recommended.
 
 ## Differences from Chime
 
@@ -11,9 +11,12 @@ A practical remix of [Chime](https://github.com/Bluemoondragon07/chime-theme) fo
 - Builds in list grids/cards, tree lists, floating and multi-column callouts, alternate checkboxes, and priority tags.
 - Adds styling for Bases, Commander, Calendar, and Kanban.
 - Removes Chime's legacy layouts, background images, `wiki-page`, `novel`, outdated color schemes, Page Gallery, and other obsolete plugin rules.
-- Everything else is labeled under `Obsidian Settings → Style Settings → Gastrodon`.
+- Everything else is labeled under `Obsidian Settings → Style Settings → Sea Slug`.
 
 ## Styling Guide
+
+`mailbox-cards` adds airmail-style Bases cards. `musicshelf` adds record sleeves; `pokemonbox` is the existing collection-card class. `no-fade` keeps Bases cards fully opaque.
+
 - Preview static note pages [here](https://share.note.sx/93dfz98e). 
 - Preview the available color schemes [here](/palettes).
 
@@ -26,7 +29,7 @@ Add these under the note's `cssclasses` property.
 | Width    | `width-800`, `width-900`, `width-1000`, `width-1200`, `width-1600`             |
 | Cleanup  | `no-backlinks`, `no-count`, `no-fold`, `clean-embed`                             |
 | Banners  | `banner`, `banner-fade`                                                              |
-| Bases    | `no-head`, `case-card`, `center-card`, `oneline`, `pokemonbox`, `musicshelf` |
+| Bases    | `no-head`, `case-card`, `center-card`, `oneline`, `no-fade`, `mailbox-cards`, `pokemonbox`, `musicshelf` |
 | Text     | `colorful-headings`, `colorful-headings-alt`, `underlined-highlight`               |
 | Headings | `h1-center`–`h6-center`, `h1-bottom-border`–`h6-bottom-border`                 |
 
@@ -72,12 +75,12 @@ Put the tag inside the list. It is hidden in Reading view.
 | Group        | Types or metadata                                                                                                 |
 | ------------ | ----------------------------------------------------------------------------------------------------------------- |
 | Legal        | `facts`, `posture`, `issue`, `rule`, `analysis`, `conclusion`, `concurrence`, `dissent`                           |
-| Other types  | `email`, `conversation`, `conversation-outline`, `conversation-minimalist`, `timeline`, `custom-icon`, `polaroid` |
+| Other types  | `email`, `conversation`, `conversation-outline`, `conversation-minimalist`, `timeline`, `polaroid` |
 | Custom icon  | `[!lucide-icon\|custom-icon]`; add a color after `custom-icon` when needed                                        |
 | Layout types | `blank`, `multi-column`                                                                                           |
 | Colors       | `gray`, `brown`, `red`, `orange`, `yellow`, `green`, `cyan`, `blue`, `purple`, `pink`                             |
 | Cleanup      | `no-bg`, `no-background`, `no-icon`, `no-title`, `blank`, `wide`, `black-and-white`, `b-w`                        |
-| Floats       | `left`, `right`, `float-left`, `float-right`; add `-small`, `-medium`, or `-large`                                |
+| Floats       | `left`, `right`, `float-left`, `float-right`; sized forms: `float-left-small` / `float-right-small` (also `medium`, `large`)                                |
 | Timeline     | `horizontal`, `numbered`, `skip`                                                                                  |
 | Email        | `sep`                                                                                                             |
 
@@ -102,7 +105,7 @@ Put the tag inside the list. It is hidden in Reading view.
 
 1. Install and enable [BRAT](https://github.com/TfTHacker/obsidian42-brat).
 2. Choose `Add a beta theme` and enter `https://github.com/t-if/gastrodon`.
-3. Select `Gastrodon` under `Settings → Appearance → Themes`.
+3. Select `Sea Slug` under `Settings → Appearance → Themes`.
 
 BRAT uses `theme-beta.css`. `theme.css` has the same features with my personal defaults.
 
