@@ -106,7 +106,7 @@ Put the tag inside the list. It is hidden in Reading view.
 ## Installation
 
 1. Install and enable [BRAT](https://github.com/TfTHacker/obsidian42-brat).
-2. Choose `Add a beta theme` and enter `https://github.com/t-if/gastrodon`.
+2. Choose `Add a beta theme` and enter `https://github.com/t-if/sea-slug`.
 3. Select `Sea Slug` under `Settings → Appearance → Themes`.
 
 BRAT uses `theme-beta.css`. `theme.css` has the same features with my personal defaults.
