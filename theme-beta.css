@@ -1935,6 +1935,7 @@ body {
 .mailbox-cards .bases-cards-item {
   overflow: hidden;
   gap: var(--size-2-1);
+  padding-bottom: var(--size-4-2);
 
   border: var(--bases-cards-border);
   border-radius: var(--radius-m);
@@ -5856,13 +5857,13 @@ body {
 
 /* ---------- style settings ---------- */
 
-.style-settings-heading[data-id="gastrodon-theme"] .setting-item-name {
+.style-settings-heading[data-id="sea-slug-theme"] .setting-item-name {
   color: var(--color-accent-1);
 }
 
 /* @settings
-name: Gastrodon
-id: gastrodon-theme
+name: Sea Slug
+id: sea-slug-theme
 settings:
     -
         id: theme-appearance
