@@ -3,7 +3,7 @@
 
 Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](https://github.com/Bluemoondragon07/chime-theme) for Obsidian 1.13+. [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is recommended. 
 
-![Sea Slug — a soft pastel Obsidian theme; illustrative notes UI](assets/sea-slug-social.png)
+![Sea Slug for Obsidian — West Sea light mailbox cards and East Sea dark callouts](assets/sea-slug-social.png)
 
 
 ## Differences from Chime
