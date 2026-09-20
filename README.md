@@ -151,8 +151,6 @@ Put the tag inside the list. It is hidden in Reading view.
 2. Choose `Add a beta theme` and enter `https://github.com/t-if/sea-slug`.
 3. Select `Sea Slug` under `Settings → Appearance → Themes`.
 
-BRAT uses `theme-beta.css`. `theme.css` has the same features with my personal defaults.
-
 ## Credits & License
 
 Based on [Chime](https://github.com/Bluemoondragon07/chime-theme), with adapted work from [MCL Multi Column](https://github.com/efemkay), [Obsidian Banner Snippet](https://github.com/HandaArchitect/obsidian-banner-snippet), [Fancy-a-Story](https://elsatam.github.io/obsidian-fancy-a-story/), [Minimal](https://github.com/kepano/obsidian-minimal), [r-u-s-h-i-k-e-s-h&#39;s snippets](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets), [Maple](https://github.com/subframe7536/obsidian-theme-maple), and [Adrenaline](https://github.com/Spekulucius/obsidian-adrenaline). Source comments contain detailed attribution.
