@@ -1804,7 +1804,7 @@ https://discord.com/channels/686053708261228577/702656734631821413/1144209029464
 /* ---------- bases ---------- */
 
 body {
-  --bases-table-header-icon-display: none;
+  --bases-table-header-icon-display: flex;
   --bases-table-header-weight: 700;
 }
 
@@ -1901,6 +1901,7 @@ body {
 }
 
 /* mailbox cards */
+
 .no-fade .bases-cards-items,
 .no-fade .bases-cards-item,
 .mailbox-cards .bases-cards-items,
@@ -2288,94 +2289,6 @@ from https://github.com/Scaryharry4 */
 
 .hover-callout  .callout-content .callout {
   opacity: 1;
-}
-
-/* Legal-themed callouts */
-
-.callout[data-callout="conclusion"],
-.callout[data-callout="rule"],
-.callout[data-callout="issue"],
-.callout[data-callout="dissent"],
-.callout[data-callout="concurrence"],
-.callout[data-callout="analysis"],
-.callout[data-callout="facts"],
-.callout[data-callout="posture"] {
-  border-left: 4px solid var(--callout-color);
-  background-color: color-mix(in oklch, var(--callout-color) 10%, transparent);
-  box-shadow: 0 2px 8px color-mix(in oklch, var(--callout-color) 12%, transparent);
-  margin: 1em 0;
-  padding: 1em;
-  border-radius: 0 var(--radius-s) var(--radius-s) 0;
-}
-
-.callout[data-callout="conclusion"] {
-  --callout-color: var(--color-cyan);
-  --callout-icon: 'gavel';
-
-  /* Original icon */
-}
-
-.callout[data-callout="rule"] {
-  --callout-color: var(--color-yellow);
-  --callout-icon: 'scroll';
-
-  /* Original icon */
-}
-
-.callout[data-callout="analysis"] {
-  --callout-color: var(--color-green);
-  --callout-icon: 'scale';
-
-  /* Original icon */
-}
-
-.callout[data-callout="issue"] {
-  --callout-color: var(--color-red);
-  --callout-icon: 'pencil-ruler';
-
-  /* Original icon */
-}
-
-.callout[data-callout="dissent"] {
-  --callout-color: var(--color-pink);
-  --callout-icon: 'message-circle-x';
-
-  /* Original icon */
-}
-
-.callout[data-callout="concurrence"] {
-  --callout-color: var(--color-orange);
-  --callout-icon: 'message-circle-warning';
-
-  /* Original icon */
-}
-
-.callout[data-callout="facts"] {
-  --callout-color: var(--color-purple);
-  --callout-icon: 'lamp-desk';
-
-  /* Original icon */
-}
-
-.callout[data-callout="posture"] {
-  --callout-color: var(--color-blue);
-  --callout-icon: 'landmark';
-
-  /* Original icon */
-}
-
-.callout[data-callout="conclusion"] .callout-title,
-.callout[data-callout="rule"] .callout-title,
-.callout[data-callout="issue"] .callout-title,
-.callout[data-callout="analysis"] .callout-title,
-.callout[data-callout="dissent"] .callout-title,
-.callout[data-callout="concurrence"] .callout-title,
-.callout[data-callout="facts"] .callout-title,
-.callout[data-callout="posture"] .callout-title {
-  font-weight: bold;
-  color: var(--callout-color);
-  display: flex;
-  align-items: center;
 }
 
 /* extended callout options */
@@ -5968,7 +5881,7 @@ settings:
         id: hover-callout
         title: Hover to Expand Callout
         type: class-toggle
-        default: true
+        default: false
     -
         id: bullet-threading
         title: Bullet Threading
@@ -5998,7 +5911,7 @@ settings:
         id: clean-embed
         title: Seamless Embedded Links
         type: class-toggle
-        default: true
+        default: false
     -
         id: underlined-highlight
         title: Underlined Highlights
@@ -6095,7 +6008,7 @@ settings:
         id: h1-center
         title: Center Header 1
         type: class-toggle
-        default: true
+        default: false
     -
         id: h1-bottom-border
         title: Header 1 Bottom Border
@@ -6126,7 +6039,7 @@ settings:
         id: h2-bottom-border
         title: Header 2 Bottom Border
         type: class-toggle
-        default: true
+        default: false
     -
         id: h3-weight
         title: Header 3 Weight
@@ -6147,7 +6060,7 @@ settings:
         id: h3-center
         title: Center Header 3
         type: class-toggle
-        default: true
+        default: false
     -
         id: h3-bottom-border
         title: Header 3 Bottom Border
@@ -6355,19 +6268,19 @@ settings:
         title: Hover to Reveal Properties
         description: Keep in-note properties collapsed and faded until the Properties area is hovered or focused. Properties remain visible on touch devices.
         type: class-toggle
-        default: true
+        default: false
     -
         id: properties-title-icon
         title: Replace Properties Title with Icon
         description: Replace the visible Properties label with a compact Lucide info icon while preserving the original label for assistive technology.
         type: class-toggle
-        default: true
+        default: false
     -
         id: bases-table-header-icon-display
         title: Table Header Icons
         description: Show or hide property-type icons in Bases table headers.
         type: variable-select
-        default: none
+        default: flex
         options:
             -
                 label: Show
@@ -6380,19 +6293,19 @@ settings:
         title: Fade Embedded Bases Header
         description: Hide the header of an embedded Base until the embed is hovered.
         type: class-toggle
-        default: true
+        default: false
     -
         id: dim-images-dark
         title: Dim Images in Dark Mode
         description: Reduce image brightness, then brighten images slightly on hover.
         type: class-toggle
-        default: true
+        default: false
     -
         id: dim-pdfs-dark
         title: Dim PDFs in Dark Mode
         description: Reduce PDF brightness, then brighten PDFs slightly on hover.
         type: class-toggle
-        default: true
+        default: false
     -
         id: focus-mode-heading
         title: Focus & Hidden
@@ -6409,13 +6322,13 @@ settings:
         id: hide-buttons
         title: Hide Buttons
         type: class-toggle
-        default: true
+        default: false
     -
         id: hover-expand-ribbon
         title: Hover to Expand Left Ribbon
         description: Collapse the ribbon to a clean edge and reveal its full-size, fading buttons on hover.
         type: class-toggle
-        default: true
+        default: false
     -
         id: hide-tabs
         title: Hide Tabs
@@ -6430,13 +6343,13 @@ settings:
         id: hide-scrollbars
         title: Hide Scrollbars
         type: class-toggle
-        default: true
+        default: false
     -
         id: hide-vault
         title: Hide Vault Name
         description: This option completely hides the Vault name; it will not reappear on hover.
         type: class-toggle
-        default: true
+        default: false
 */
 
 /* Print / PDF export: higher specificity, no effect on screen styles. */

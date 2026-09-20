@@ -1,10 +1,8 @@
-
 # Sea Slug
 
-Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](https://github.com/Bluemoondragon07/chime-theme) for Obsidian 1.13+. [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is recommended. 
+Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](https://github.com/Bluemoondragon07/chime-theme) for Obsidian 1.13+. [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is recommended.
 
 ![Sea Slug for Obsidian — West Sea light mailbox cards and East Sea dark callouts](assets/sea-slug-social.png)
-
 
 ## Differences from Chime
 
@@ -17,21 +15,21 @@ Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](h
 
 ## Styling Guide
 
-- Preview static note pages [here](https://share.note.sx/93dfz98e). 
+- Preview static note pages [here](https://share.note.sx/93dfz98e).
 - Preview the available color schemes [here](/palettes).
 
 ### Page Classes
 
 Add these under the note's `cssclasses` property.
 
-| Use      | Classes                                                                                  |
-| -------- | ---------------------------------------------------------------------------------------- |
-| Width    | `width-800`, `width-900`, `width-1000`, `width-1200`, `width-1600`             |
-| Cleanup  | `no-backlinks`, `no-count`, `no-fold`, `clean-embed`                             |
-| Banners  | `banner`, `banner-fade`                                                              |
+| Use      | Classes                                                                                                             |
+| -------- | ------------------------------------------------------------------------------------------------------------------- |
+| Width    | `width-800`, `width-900`, `width-1000`, `width-1200`, `width-1600`                                        |
+| Cleanup  | `no-backlinks`, `no-count`, `no-fold`, `clean-embed`                                                        |
+| Banners  | `banner`, `banner-fade`                                                                                         |
 | Bases    | `no-head`, `case-card`, `center-card`, `oneline`, `no-fade`, `mailbox-cards`, `pcbox`, `musicshelf` |
-| Text     | `colorful-headings`, `colorful-headings-alt`, `underlined-highlight`               |
-| Headings | `h1-center`–`h6-center`, `h1-bottom-border`–`h6-bottom-border`                 |
+| Text     | `colorful-headings`, `colorful-headings-alt`, `underlined-highlight`                                          |
+| Headings | `h1-center`–`h6-center`, `h1-bottom-border`–`h6-bottom-border`                                            |
 
 `aside-left` and `aside-right` are HTML element classes for margin notes, not page classes.
 
@@ -48,8 +46,8 @@ cssclasses: [pcbox, no-fade]
 ![[Collection.base]]
 ```
 
-| Class           | Effect                                                                                                   |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
+| Class             | Effect                                                                                                   |
+| ----------------- | -------------------------------------------------------------------------------------------------------- |
 | `pcbox`         | Collection cards with centered titles and a gentle hover lift.                                           |
 | `musicshelf`    | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view. |
 | `mailbox-cards` | Airmail cards with hidden property labels; stays fully opaque. See the property names below.             |
@@ -86,7 +84,6 @@ Image aliases also support `center` and `right`.
 
 Put an HTML aside before the paragraph it belongs to:
 
-
 ```html
 
 <aside class="aside-right">A short side note.</aside>
@@ -94,7 +91,6 @@ Put an HTML aside before the paragraph it belongs to:
   
 
 Your main paragraph goes here.
-
 ```
 
 View in Reading view with Readable line length enabled. Asides sit in the outer margin when the pane is wide enough; in narrower panes, text wraps beside them. Use plain text or HTML inside the aside, rather than Markdown formatting.
@@ -112,8 +108,8 @@ Put the tag inside the list. It is hidden in Reading view.
 ### Callouts
 
 ```markdown
-> [!issue] Issue
-> What legal question must be resolved?
+> [!polaroid] Polaroid 
+> ![[photograph.jpg]]
 
 > [!note|float-right-small] Small floating note
 > Text wraps around it.
@@ -122,35 +118,32 @@ Put the tag inside the list. It is hidden in Reading view.
 > Omit the color metadata to use the purple default.
 ```
 
-| Group        | Types or metadata                                                                                                 |
-| ------------ | ----------------------------------------------------------------------------------------------------------------- |
-| Legal        | `facts`, `posture`, `issue`, `rule`, `analysis`, `conclusion`, `concurrence`, `dissent`                           |
-| Other types  | `email`, `conversation`, `conversation-outline`, `conversation-minimalist`, `timeline`, `polaroid` |
-| Custom icon  | `[!lucide-icon\|custom-icon]`; add a color after `custom-icon` when needed                                        |
-| Layout types | `blank`, `multi-column`                                                                                           |
-| Colors       | `gray`, `brown`, `red`, `orange`, `yellow`, `green`, `cyan`, `blue`, `purple`, `pink`                             |
-| Cleanup      | `no-bg`, `no-background`, `no-icon`, `no-title`, `blank`, `wide`, `black-and-white`, `b-w`                        |
-| Floats       | `left`, `right`, `float-left`, `float-right`; sized forms: `float-left-small` / `float-right-small` (also `medium`, `large`)                                |
-| Timeline     | `horizontal`, `numbered`, `skip`                                                                                  |
-| Email        | `sep`                                                                                                             |
+| Group        | Types or metadata                                                                                                                            |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Other types  | `email`, `conversation`, `conversation-outline`, `conversation-minimalist`, `timeline`, `polaroid`                               |
+| Custom icon  | `[!lucide-icon\|custom-icon]`; add a color after `custom-icon` when needed                                                                |
+| Layout types | `blank`, `multi-column`                                                                                                                  |
+| Colors       | `gray`, `brown`, `red`, `orange`, `yellow`, `green`, `cyan`, `blue`, `purple`, `pink`                                    |
+| Cleanup      | `no-bg`, `no-background`, `no-icon`, `no-title`, `blank`, `wide`, `black-and-white`, `b-w`                                   |
+| Floats       | `left`, `right`, `float-left`, `float-right`; sized forms: `float-left-small` / `float-right-small` (also `medium`, `large`) |
+| Timeline     | `horizontal`, `numbered`, `skip`                                                                                                       |
+| Email        | `sep`                                                                                                                                      |
 
 ### Checkboxes
 
-
-| Marker | Meaning     | Marker | Meaning   | Tag             | Meaning         |
-| ------ | ----------- | ------ | --------- | --------------- | --------------- |
-| `/`    | Incomplete  | `-`    | Canceled  | `#A`            | High priority   |
-| `>`    | Forwarded   | `<`    | Scheduled | `#B`            | Medium priority |
-| `?`    | Question    | `!`    | Important | `#C`            | Low priority    |
-| `*`    | Star        | `“`    | Quote     | `#rsvp`         | Recurring       |
-| `l`    | Location    | `b`    | Bookmark  | `#show`         | Event           |
-| `i`    | Information | `I`    | Idea      | `#productivity` | Productivity    |
-| `S`    | Savings     | `p`    | Pro       |                 |                 |
-| `c`    | Con         | `f`    | Fire      |                 |                 |
-| `k`    | Key         | `w`    | Win       |                 |                 |
-| `u`    | Up          | `d`    | Down      |                 |                 |
-| `R`    | Rule        | `m`    | ???       |                 |                 |
-
+| Marker | Meaning     | Marker | Meaning   | Tag               | Meaning         |
+| ------ | ----------- | ------ | --------- | ----------------- | --------------- |
+| `/`  | Incomplete  | `-`  | Canceled  | `#A`            | High priority   |
+| `>`  | Forwarded   | `<`  | Scheduled | `#B`            | Medium priority |
+| `?`  | Question    | `!`  | Important | `#C`            | Low priority    |
+| `*`  | Star        | `“` | Quote     | `#rsvp`         | Recurring       |
+| `l`  | Location    | `b`  | Bookmark  | `#show`         | Event           |
+| `i`  | Information | `I`  | Idea      | `#productivity` | Productivity    |
+| `S`  | Savings     | `p`  | Pro       |                   |                 |
+| `c`  | Con         | `f`  | Fire      |                   |                 |
+| `k`  | Key         | `w`  | Win       |                   |                 |
+| `u`  | Up          | `d`  | Down      |                   |                 |
+| `R`  | Rule        | `m`  | ???       |                   |                 |
 
 ## Installation
 
