@@ -1972,11 +1972,7 @@ body {
 /* file name */
 
 .mailbox-cards
-.bases-cards-property[data-property="formula.mailbox-bold"],
-.mailbox-cards
-.bases-cards-property[data-property="file.name"],
-.mailbox-cards
-.bases-cards-property[data-property="file.basename"] {
+.bases-cards-property[data-property="formula.mailbox-bold"] {
   font-weight: var(--font-semibold);
 }
 
@@ -2016,6 +2012,10 @@ body {
 .mailbox-cards
 .bases-cards-property[data-property="formula.icon"]
 .bases-cards-line {
+  /* Keep the stamp in the value column when mobile omits the label. */
+  grid-column: 2;
+  grid-row: 1;
+  margin-inline-start: auto;
   justify-self: end;
   inline-size: 26px;
   block-size: 26px;
