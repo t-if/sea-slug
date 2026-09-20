@@ -17,8 +17,6 @@ Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](h
 
 ## Styling Guide
 
-`mailbox-cards` adds airmail-style Bases cards. `musicshelf` adds record sleeves; `pcbox` is the existing collection-card class. `no-fade` keeps Bases cards fully opaque.
-
 - Preview static note pages [here](https://share.note.sx/93dfz98e). 
 - Preview the available color schemes [here](/palettes).
 
@@ -37,6 +35,39 @@ Add these under the note's `cssclasses` property.
 
 `aside-left` and `aside-right` are HTML element classes for margin notes, not page classes.
 
+### Bases
+
+Add classes to the note containing the embedded Base, then select a Cards view in the Base. They style the view, not the individual notes listed in it. Classes affect all Bases embedded in that note.
+
+```markdown
+---
+cssclasses: [pcbox, no-fade]
+---
+
+
+![[Collection.base]]
+```
+
+| Class           | Effect                                                                                                   |
+| --------------- | -------------------------------------------------------------------------------------------------------- |
+| `pcbox`         | Collection cards with centered titles and a gentle hover lift.                                           |
+| `musicshelf`    | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view. |
+| `mailbox-cards` | Airmail cards with hidden property labels; stays fully opaque. See the property names below.             |
+| `no-fade`       | Keeps other card styles fully opaque without hovering.                                                   |
+| `no-head`       | Hides the embedded Base's toolbar/header; also works with other view types.                              |
+| `center-card`   | Centers card titles.                                                                                     |
+| `oneline`       | Compact label/value columns and centered titles.                                                         |
+| `case-card`     | Limits card property text to three lines.                                                                |
+
+In a Card Base view embedded in a note with the cssclass `mailbox-cards`, add these formulas with these exact names in this order:
+
+- `icon`: the stamp row; return the icon you want to display.
+- `mailbox-bold`: bold heading text, such as the file name.
+- Your other properties: dates, descriptions, etc.
+- `mailbox-cards`: the footer with a separator above it.
+
+These are formula names, not display labels; CSS targets `formula.icon`, `formula.mailbox-bold`, and `formula.mailbox-cards`. The styling does not create formulas or calculate dates for you.
+
 ### Banners & Images
 
 ```yaml
@@ -50,6 +81,23 @@ cssclasses: [banner, banner-fade]
 ```
 
 Image aliases also support `center` and `right`.
+
+### Asides
+
+Put an HTML aside before the paragraph it belongs to:
+
+
+```html
+
+<aside class="aside-right">A short side note.</aside>
+
+  
+
+Your main paragraph goes here.
+
+```
+
+View in Reading view with Readable line length enabled. Asides sit in the outer margin when the pane is wide enough; in narrower panes, text wraps beside them. Use plain text or HTML inside the aside, rather than Markdown formatting.
 
 ### Lists
 
@@ -102,6 +150,7 @@ Put the tag inside the list. It is hidden in Reading view.
 | `k`    | Key         | `w`    | Win       |                 |                 |
 | `u`    | Up          | `d`    | Down      |                 |                 |
 | `R`    | Rule        | `m`    | ???       |                 |                 |
+
 
 ## Installation
 
