@@ -17,7 +17,7 @@ Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](h
 
 ## Styling Guide
 
-`mailbox-cards` adds airmail-style Bases cards. `musicshelf` adds record sleeves; `pokemonbox` is the existing collection-card class. `no-fade` keeps Bases cards fully opaque.
+`mailbox-cards` adds airmail-style Bases cards. `musicshelf` adds record sleeves; `pcbox` is the existing collection-card class. `no-fade` keeps Bases cards fully opaque.
 
 - Preview static note pages [here](https://share.note.sx/93dfz98e). 
 - Preview the available color schemes [here](/palettes).
@@ -31,7 +31,7 @@ Add these under the note's `cssclasses` property.
 | Width    | `width-800`, `width-900`, `width-1000`, `width-1200`, `width-1600`             |
 | Cleanup  | `no-backlinks`, `no-count`, `no-fold`, `clean-embed`                             |
 | Banners  | `banner`, `banner-fade`                                                              |
-| Bases    | `no-head`, `case-card`, `center-card`, `oneline`, `no-fade`, `mailbox-cards`, `pokemonbox`, `musicshelf` |
+| Bases    | `no-head`, `case-card`, `center-card`, `oneline`, `no-fade`, `mailbox-cards`, `pcbox`, `musicshelf` |
 | Text     | `colorful-headings`, `colorful-headings-alt`, `underlined-highlight`               |
 | Headings | `h1-center`–`h6-center`, `h1-bottom-border`–`h6-bottom-border`                 |
 

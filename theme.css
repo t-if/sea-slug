@@ -2048,9 +2048,9 @@ body {
   );
 }
 
-/* pokemon box */
+/* collection cards (pcbox) */
 
-:is(.workspace-leaf:has([aria-label*="Pokémon"]), .pokemonbox) .bases-view {
+.pcbox .bases-view {
   --bases-cards-background: var(--background-secondary);
   --bases-cards-border: 1px solid rgb(255 255 255 / 8%);
   --bases-cards-shadow: 0 4px 12px rgb(0 0 0 / 15%);
@@ -2060,14 +2060,14 @@ body {
 
 /* Grid spacing like PC boxes */
 
-:is(.workspace-leaf:has([aria-label*="Pokémon"]), .pokemonbox) .bases-cards-group {
+.pcbox .bases-cards-group {
   gap: 16px;
   padding: 16px;
 }
 
 /* Card styling */
 
-:is(.workspace-leaf:has([aria-label*="Pokémon"]), .pokemonbox) .bases-cards-item {
+.pcbox .bases-cards-item {
   border-radius: 14px;
   border: var(--bases-cards-border);
   background: linear-gradient(
@@ -2081,20 +2081,20 @@ body {
 
 /* Slight "pick up" effect */
 
-:is(.workspace-leaf:has([aria-label*="Pokémon"]), .pokemonbox) .bases-cards-item:hover {
+.pcbox .bases-cards-item:hover {
   transform: translateY(-2px) scale(1.01);
 }
 
 /* Sprite container (clean + centered) */
 
-:is(.workspace-leaf:has([aria-label*="Pokémon"]), .pokemonbox) .bases-cards-cover {
+.pcbox .bases-cards-cover {
   border-radius: 10px;
   padding: 6px;
 }
 
 /* Title = slightly more "card label" feel */
 
-:is(.workspace-leaf:has([aria-label*="Pokémon"]), .pokemonbox) .bases-cards-property.mod-title {
+.pcbox .bases-cards-property.mod-title {
   font-weight: 600;
   letter-spacing: 0.02em;
   text-align: center;
@@ -2102,7 +2102,7 @@ body {
 
 /* Property labels (No., Category, etc.) */
 
-:is(.workspace-leaf:has([aria-label*="Pokémon"]), .pokemonbox) .bases-cards-label {
+.pcbox .bases-cards-label {
   opacity: 0.6;
   font-size: 0.75em;
   text-transform: uppercase;
