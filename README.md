@@ -129,6 +129,24 @@ Put the tag inside the list. It is hidden in Reading view.
 | Timeline     | `horizontal`, `numbered`, `skip`                                                                                                       |
 | Email        | `sep`                                                                                                                                      |
 
+#### Hover-to-Expand
+
+When enabled in Style Settings, ordinary callouts start with their content hidden and reveal it on hover. Add `+` immediately after the closing bracket (`[!note]+`) to start expanded instead. Use this for layouts that need their content visible, such as multi-column groups or image card.
+
+In multi-column layouts, for example, add `+` to both the outer container and each nested callout:
+
+```markdown
+> [!multi-column]+
+> > [!info]+ Title
+> > Content
+>
+> > [!warning]+ Title
+> > Content
+>
+> > [!tldr]+ Title
+> > Content
+```
+
 ### Checkboxes
 
 | Marker | Meaning     | Marker | Meaning   | Tag               | Meaning         |
