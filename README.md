@@ -2,7 +2,7 @@
 
 Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](https://github.com/Bluemoondragon07/chime-theme) for Obsidian 1.13+. [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is recommended.
 
-![Sea Slug for Obsidian — West Sea light mailbox cards and East Sea dark callouts](assets/sea-slug-social.png) 
+![Sea Slug for Obsidian — West Sea light mailbox cards and East Sea dark callouts](assets/sea-slug-social.png)
 
 ## Differences from Chime
 
@@ -46,16 +46,15 @@ cssclasses: [pcbox, no-fade]
 ![[Collection.base]]
 ```
 
-| Class             | Effect                                                                                                   |
-| ----------------- | -------------------------------------------------------------------------------------------------------- |
-| `pcbox`         | Collection cards with centered titles and a gentle hover lift.                                           |
-| `musicshelf`    | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view. |
-| `mailbox-cards` | Airmail cards with hidden property labels; stays fully opaque. See the property names below.             |
-| `no-fade`       | Keeps other card styles fully opaque without hovering.                                                   |
-| `no-head`       | Hides the embedded Base's toolbar/header; also works with other view types.                              |
-| `center-card`   | Centers card titles.                                                                                     |
-| `oneline`       | Compact label/value columns and centered titles.                                                         |
-| `case-card`     | Limits card property text to three lines.                                                                |
+| Class               | Effect                                                                                                   |
+| ------------------- | -------------------------------------------------------------------------------------------------------- |
+| `pcbox`           | Collection cards with centered titles and a gentle hover lift.                                           |
+| `musicshelf`      | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view. |
+| `mailbox-cards`   | Airmail cards with hidden property labels; stays fully opaque. See the property names below.             |
+| `no-fade`         | Keeps other card styles fully opaque without hovering.                                                   |
+| `no-head`         | Hides the embedded Base's toolbar/header; also works with other view types.                              |
+| `center-card`     | Centers card titles.                                                                                     |
+| `frameless-cards` | Cards without any background or container.                                                               |
 
 In a Card Base view embedded in a note with the cssclass `mailbox-cards`, add these formulas with these exact names in this order:
 

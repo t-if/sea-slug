@@ -1860,8 +1860,7 @@ body {
   display: none;
 }
 
-.center-card .bases-cards-property.mod-title,
-.frameless-cards .bases-cards-property.mod-title {
+.center-card .bases-cards-property.mod-title {
   text-align: center;
 }
 
@@ -1870,7 +1869,9 @@ body {
 .no-fade .bases-cards-items,
 .no-fade .bases-cards-item,
 .mailbox-cards .bases-cards-items,
-.mailbox-cards .bases-cards-item {
+.mailbox-cards .bases-cards-item,
+.theme-light .frameless-cards .bases-cards-items,
+.theme-light .frameless-cards .bases-cards-item {
   opacity: 1;
 }
 
