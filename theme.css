@@ -115,6 +115,13 @@ body {
   background-position: 50% 50%;
 }
 
+/* --- MacOS fix -- */
+
+body {
+  --titlebar-background: var(--background-secondary);
+  --titlebar-background-focused: var(--background-secondary);
+}
+
 /* -- round some things --- */
 
 body {
@@ -1849,55 +1856,13 @@ body {
   display: none;
 }
 
-.case-card .bases-cards-line {
-  line-height: 1.2;
-  height: 4em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+.no-head .bases-group-heading .bases-group-property, .no-group .bases-group-heading .bases-group-property { 
+  display: none;
 }
 
 .center-card .bases-cards-property.mod-title,
-.oneline .bases-cards-property.mod-title {
+.frameless-cards .bases-cards-property.mod-title {
   text-align: center;
-}
-
-.oneline div.bases-cards-property:not(div.bases-cards-property.mod-title) {
-  padding-right: var(--size-4-2);
-  display: grid;
-
-  /* Change the 5em to however much space you want the label to take up */
-  grid-template-columns: 1.75em 1fr;
-  gap: var(--input-padding);
-}
-
-.oneline div.bases-cards-label {
-  align-content: center;
-  text-align: left;
-  padding-right: 0;
-}
-
-.oneline div.bases-cards-property:not(div.bases-cards-property.mod-title) .bases-cards-line {
-  padding-left: 0;
-  padding-right: 0;
-  align-content: center;
-  text-align: left;
-}
-
-/* Less wasted space */
-
-.oneline .bases-cards-item {
-  gap: var(--size-2-1);
-}
-
-.oneline .bases-cards-label {
-  font-size: 0.7em;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-muted);
 }
 
 /* mailbox cards */
@@ -2111,6 +2076,7 @@ body {
 }
 
 /* --- music shelf --- */
+/* Adapted from ProudBenzene's snippet https://gist.github.com/ProudBenzene/19667d8726fb472e4a81f21125fd60e5*/
 
 :is(.workspace-leaf:has([aria-label*="Music"]), .musicshelf) .bases-view {
   --bases-cards-background: transparent;
