@@ -22,14 +22,14 @@ Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](h
 
 Add these under the note's `cssclasses` property.
 
-| Use      | Classes                                                                                                             |
-| -------- | ------------------------------------------------------------------------------------------------------------------- |
-| Width    | `width-800`, `width-900`, `width-1000`, `width-1200`, `width-1600`                                        |
-| Cleanup  | `no-backlinks`, `no-count`, `no-fold`, `clean-embed`                                                        |
-| Banners  | `banner`, `banner-fade`                                                                                         |
-| Bases    | `no-head`, `case-card`, `center-card`, `oneline`, `no-fade`, `mailbox-cards`, `pcbox`, `musicshelf` |
-| Text     | `colorful-headings`, `colorful-headings-alt`, `underlined-highlight`                                          |
-| Headings | `h1-center`–`h6-center`, `h1-bottom-border`–`h6-bottom-border`                                            |
+| Use      | Classes                                                                     |
+| -------- | --------------------------------------------------------------------------- |
+| Width    | `width-800`, `width-900`, `width-1000`, `width-1200`, `width-1600`          |
+| Cleanup  | `no-backlinks`, `no-count`, `no-fold`, `clean-embed`                        |
+| Banners  | `banner`, `banner-fade`                                                     |
+| Bases    | `no-head`, `center-card`, `no-fade`, `mailbox-cards`, `pcbox`, `musicshelf` |
+| Text     | `colorful-headings`, `colorful-headings-alt`, `underlined-highlight`        |
+| Headings | `h1-center`–`h6-center`, `h1-bottom-border`–`h6-bottom-border`              |
 
 `aside-left` and `aside-right` are HTML element classes for margin notes, not page classes.
 
