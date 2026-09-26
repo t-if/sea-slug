@@ -258,7 +258,7 @@ body.hover-expand-ribbon:not(.is-mobile) .sidebar-toggle-button:not(.mod-right):
 /* --- floating titlebar --- */
 
 .view-header-title {
-  font-size: 14px;
+  color: var(--text-faint);
 }
 
 .view-header-breadcrumb {
