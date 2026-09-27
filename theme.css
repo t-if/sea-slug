@@ -1864,8 +1864,6 @@ body {
   text-align: center;
 }
 
-/* mailbox cards */
-
 .no-fade .bases-cards-items,
 .no-fade .bases-cards-item,
 .mailbox-cards .bases-cards-items,
@@ -1874,6 +1872,46 @@ body {
 .theme-light .frameless-cards .bases-cards-item {
   opacity: 1;
 }
+
+/* ---------- frameless cards ---------- */
+
+.frameless-cards .bases-view {
+  --bases-cards-background: transparent;
+  --bases-cards-cover-background: transparent;
+  --bases-cards-border: none;
+  --bases-cards-shadow: none;
+  --bases-cards-shadow-hover: none;
+}
+
+.frameless-cards .bases-cards-group {
+  gap: 18px;
+  padding: 8px 0;
+}
+
+.frameless-cards .bases-cards-item {
+  gap: 0;
+  overflow: visible;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.18s ease;
+}
+
+.frameless-cards .bases-cards-item:hover {
+  transform: translateY(-3px);
+}
+
+.center-card.frameless-cards
+.bases-cards-property[data-property="formula.center-subtitle"] {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* mailbox cards */
 
 .mailbox-cards .bases-view {
   --mail-pink: var(--color-pink);
