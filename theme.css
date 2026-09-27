@@ -1,4 +1,4 @@
-/* Sea Slug — remix of Chime by Ha'ani Whitlock.*/
+/* Sea Slug — remix of Chime by Ha'ani Whitlock. */
 
 /* ==========================================================================
    SECTION 01 — Fonts and bundled assets
@@ -257,11 +257,8 @@ body.hover-expand-ribbon:not(.is-mobile) .sidebar-toggle-button:not(.mod-right):
 
 /* --- floating titlebar --- */
 
+.view-header-breadcrumb,
 .view-header-title {
-  color: var(--text-faint);
-}
-
-.view-header-breadcrumb {
   color: var(--text-faint);
 }
 
@@ -1856,7 +1853,8 @@ body {
   display: none;
 }
 
-.no-head .bases-group-heading .bases-group-property, .no-group .bases-group-heading .bases-group-property { 
+.no-head .bases-group-heading .bases-group-property,
+.no-group .bases-group-heading .bases-group-property {
   display: none;
 }
 
@@ -1871,44 +1869,6 @@ body {
 .theme-light .frameless-cards .bases-cards-items,
 .theme-light .frameless-cards .bases-cards-item {
   opacity: 1;
-}
-
-/* ---------- frameless cards ---------- */
-
-.frameless-cards .bases-view {
-  --bases-cards-background: transparent;
-  --bases-cards-cover-background: transparent;
-  --bases-cards-border: none;
-  --bases-cards-shadow: none;
-  --bases-cards-shadow-hover: none;
-}
-
-.frameless-cards .bases-cards-group {
-  gap: 18px;
-  padding: 8px 0;
-}
-
-.frameless-cards .bases-cards-item {
-  gap: 0;
-  overflow: visible;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  transition: transform 0.18s ease;
-}
-
-.frameless-cards .bases-cards-item:hover {
-  transform: translateY(-3px);
-}
-
-.center-card.frameless-cards
-.bases-cards-property[data-property="formula.center-subtitle"] {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.75em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 /* mailbox cards */
@@ -1927,23 +1887,20 @@ body {
     var(--color-accent) 4%
   );
   --bases-cards-border: 1px solid var(--mail-border);
-
   --bases-cards-shadow:
-    0 1px 3px rgb(0 0 0 / 0.035),
-    0 4px 12px rgb(0 0 0 / 0.025);
+    0 1px 3px rgb(0 0 0 / 3.5%),
+    0 4px 12px rgb(0 0 0 / 2.5%);
   --bases-cards-shadow-hover:
-    0 2px 5px rgb(0 0 0 / 0.045),
-    0 7px 16px rgb(0 0 0 / 0.04);
+    0 2px 5px rgb(0 0 0 / 4.5%),
+    0 7px 16px rgb(0 0 0 / 4%);
 }
 
 .mailbox-cards .bases-cards-item {
   overflow: hidden;
   gap: var(--size-2-1);
   padding-bottom: var(--size-4-2);
-
   border: var(--bases-cards-border);
   border-radius: var(--radius-m);
-
   background-color: var(--bases-cards-background);
   background-image:
     repeating-linear-gradient(
@@ -2001,9 +1958,11 @@ body {
   column-gap: var(--input-padding);
   padding-right: var(--size-4-2);
 }
+
 .mailbox-cards .bases-cards-label {
   visibility: hidden;
 }
+
 .mailbox-cards
 .bases-cards-property:not(.mod-title)
 .bases-cards-line {
@@ -2011,10 +1970,10 @@ body {
   padding-inline: 0;
 }
 
-/* type icon = postage stamp */
+/* Postage stamp: support both icon() and image() formulas, including Icon. */
 
 .mailbox-cards
-.bases-cards-property[data-property="formula.icon"]
+.bases-cards-property[data-property="formula.icon" i]
 .bases-cards-line {
   /* Keep the stamp in the value column when mobile omits the label. */
   grid-column: 2;
@@ -2039,10 +1998,23 @@ body {
   );
 }
 
+/* Size image artwork to the stamp instead of the default inline value image. */
+
+.mailbox-cards
+.bases-cards-property[data-property="formula.icon" i]
+.bases-cards-line img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 /* relative date footer */
 
 .mailbox-cards
-.bases-cards-property[data-property="formula.mailbox-cards"], .mailbox-cards
+.bases-cards-property[data-property="formula.mailbox-cards"],
+.mailbox-cards
 .bases-cards-property[data-property="file.mailbox-cards"] {
   margin-top: 2px;
   padding-top: 2px;
@@ -2051,6 +2023,48 @@ body {
     var(--background-modifier-border) 75%,
     transparent
   );
+}
+
+/* ---------- frameless cards ---------- */
+
+.center-card.frameless-cards
+.bases-cards-property[data-property="formula.center-subtitle"] {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.frameless-cards .bases-cards-label {
+  display: none;
+}
+
+.frameless-cards .bases-view {
+  --bases-cards-background: transparent;
+  --bases-cards-cover-background: transparent;
+  --bases-cards-border: none;
+  --bases-cards-shadow: none;
+  --bases-cards-shadow-hover: none;
+}
+
+.frameless-cards .bases-cards-group {
+  gap: 18px;
+  padding: 8px 0;
+}
+
+.frameless-cards .bases-cards-item {
+  gap: 0;
+  overflow: visible;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.18s ease;
+}
+
+.frameless-cards .bases-cards-item:hover {
+  transform: translateY(-3px);
 }
 
 /* collection cards (pcbox) */
@@ -2108,14 +2122,15 @@ body {
 /* Property labels (No., Category, etc.) */
 
 .pcbox .bases-cards-label {
-  opacity: 0.6;
+  color: var(--text-muted);
   font-size: 0.75em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 /* --- music shelf --- */
-/* Adapted from ProudBenzene's snippet https://gist.github.com/ProudBenzene/19667d8726fb472e4a81f21125fd60e5*/
+
+/* Adapted from ProudBenzene's snippet https://gist.github.com/ProudBenzene/19667d8726fb472e4a81f21125fd60e5 */
 
 :is(.workspace-leaf:has([aria-label*="Music"]), .musicshelf) .bases-view {
   --bases-cards-background: transparent;
