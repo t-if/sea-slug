@@ -1853,6 +1853,10 @@ body {
   display: none;
 }
 
+.no-head .bases-group-value {
+  color: var(--text-muted);
+}
+
 .no-head .bases-group-heading .bases-group-property,
 .no-group .bases-group-heading .bases-group-property {
   display: none;
