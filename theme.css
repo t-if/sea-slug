@@ -1816,6 +1816,14 @@ body {
   visibility: hidden;
 }
 
+.bases-group-value {
+  color: var(--text-muted);
+}
+
+.bases-group-heading {
+  margin-block: var(--size-4-1) var(--size-4-2);
+}
+
 .fade-bases-header .bases-embed .bases-header {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -1851,10 +1859,6 @@ body {
 
 .no-head .bases-embed .bases-header {
   display: none;
-}
-
-.no-head .bases-group-value {
-  color: var(--text-muted);
 }
 
 .no-head .bases-group-heading .bases-group-property,
