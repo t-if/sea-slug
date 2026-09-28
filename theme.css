@@ -1973,7 +1973,7 @@ body {
 /* Postage stamp: support both icon() and image() formulas, including Icon. */
 
 .mailbox-cards
-.bases-cards-property[data-property="formula.icon" i]
+.bases-cards-property[data-property="formula.icon"]
 .bases-cards-line {
   /* Keep the stamp in the value column when mobile omits the label. */
   grid-column: 2;
@@ -2001,7 +2001,7 @@ body {
 /* Size image artwork to the stamp instead of the default inline value image. */
 
 .mailbox-cards
-.bases-cards-property[data-property="formula.icon" i]
+.bases-cards-property[data-property="formula.icon"]
 .bases-cards-line img {
   display: block;
   width: 100%;
