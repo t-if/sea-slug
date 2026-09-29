@@ -15,8 +15,9 @@ Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](h
 
 ## Styling Guide
 
-- Preview static note pages [here](https://share.note.sx/93dfz98e).
-- Preview the available color schemes [here](/palettes).
+- See callouts, lists, and other note components [here](https://share.note.sx/93dfz98e).
+- See available color schemes [here](/palettes).
+- See Base styles below.
 
 ### Page Classes
 
@@ -36,6 +37,8 @@ Add these under the note's `cssclasses` property.
 ### Bases
 
 Add classes to the note containing the embedded Base, then select a Cards view in the Base. They style the view, not the individual notes listed in it. Classes affect all Bases embedded in that note.
+
+![Bases Page Styles](assets/base-page-styles.png)
 
 ```markdown
 ---
