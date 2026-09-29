@@ -46,15 +46,19 @@ cssclasses: [pcbox, no-fade]
 ![[Collection.base]]
 ```
 
-| Class               | Effect                                                                                                                                                        |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `pcbox`           | Collection cards with centered titles and a gentle hover lift.                                                                                                |
-| `musicshelf`      | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view.                                                      |
-| `mailbox-cards`   | Airmail cards with hidden property labels; stays fully opaque. See the property names below.                                                                  |
-| `no-fade`         | Keeps other card styles fully opaque without hovering.                                                                                                        |
-| `no-head`         | Hides the embedded Base's toolbar/header; also works with other view types.                                                                                   |
-| `center-card`     | Centers card titles.                                                                                                                                          |
-| `frameless-cards` | Cards without any background or container; if used together with`center-card` class, `formula.center-subtitle` displays a property as a centered heading. |
+| Class               | Effect                                                                                                   |
+| ------------------- | -------------------------------------------------------------------------------------------------------- |
+| `pcbox`           | Collection cards with centered titles and a gentle hover lift.                                           |
+| `musicshelf`      | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view. |
+| `mailbox-cards`   | Airmail cards with hidden property labels; stays fully opaque. See the property names below.             |
+| `no-fade`         | Keeps other card styles fully opaque without hovering.                                                   |
+| `no-head`         | Hides the embedded Base's toolbar/header; also works with other view types.                              |
+| `center-card`     | Centers card titles.                                                                                     |
+| `frameless-cards` | Cards without any background or container.                                                               |
+
+#### Bases Formulas
+
+If`frameless-cards` and `center-card` cssclasses are both applied to a note, `formula.center-subtitle` displays a property as a centered heading.
 
 In a Card Base view embedded in a note with the cssclass `mailbox-cards`, add these formulas with these exact names in this order:
 
@@ -62,6 +66,8 @@ In a Card Base view embedded in a note with the cssclass `mailbox-cards`, add th
 - `mailbox-bold`: bold heading text, such as the file name.
 - Your other properties: dates, descriptions, etc.
 - `mailbox-cards`: the footer with a separator above it.
+
+![Bases Property Styles](assets/base-property-styles.png)
 
 These are formula names, not display labels; CSS targets `center-subtitle`,  `formula.icon`, `formula.mailbox-bold`, and `formula.mailbox-cards`. The styling does not create formulas or calculate values for you.
 
