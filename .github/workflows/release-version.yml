@@ -2,49 +2,51 @@ name: Publish new theme version
 
 on:
   push:
-    # Sequence of patterns matched against refs/tags
     tags:
-      - "*" # Push events to matching any tag format, i.e. 1.0, 20.15.10
+      - "*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: theme-release
+  cancel-in-progress: false
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Bundle
-        id: bundle
+      - uses: actions/checkout@v4
+
+      - name: Validate release files
+        env:
+          RELEASE_EVENT: ${{ github.event_name }}
+          RELEASE_REF: ${{ github.ref_name }}
         run: |
-          ls
-          echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+          node <<'NODE'
+          const fs = require('node:fs');
+          const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
+          const versions = JSON.parse(fs.readFileSync('versions.json', 'utf8'));
+          const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          if (!/^\d+\.\d+\.\d+$/.test(manifest.version)) throw new Error('Use an x.y.z version.');
+          if (pkg.version !== manifest.version) throw new Error('Package and manifest versions differ.');
+          if (versions[manifest.version] !== manifest.minAppVersion) throw new Error('versions.json does not match the manifest.');
+          if (process.env.RELEASE_EVENT === 'push' && process.env.RELEASE_REF !== manifest.version) throw new Error('Tag must match the manifest version exactly.');
+          if (!fs.statSync('theme.css').size) throw new Error('theme.css is empty.');
+          fs.appendFileSync(process.env.GITHUB_ENV, `VERSION=${manifest.version}\n`);
+          fs.writeFileSync('release-notes.md', `Sea Slug ${manifest.version}\n\nSoft colors, flexible callouts, and styled Bases, with light and dark modes.\n\nRequires Obsidian ${manifest.minAppVersion} or later. Style Settings is recommended.\n\nThe attached manifest.json and theme.css are the installable theme files. See the repository README for usage and credits.\n`);
+          NODE
+
+      - name: Publish theme assets
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ github.ref }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          draft: false
-          prerelease: false
-      - name: Upload manifest.json
-        id: upload-manifest
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./manifest.json
-          asset_name: manifest.json
-          asset_content_type: application/json
-      - name: Upload theme.css
-        id: upload-css
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./theme-beta.css
-          asset_name: theme.css
-          asset_content_type: text/css
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_COMMIT: ${{ github.sha }}
+        run: |
+          gh release create "$VERSION" manifest.json theme.css \
+            --target "$RELEASE_COMMIT" \
+            --title "Sea Slug $VERSION" \
+            --notes-file release-notes.md \
+            --draft
+          gh release edit "$VERSION" --draft=false --latest
