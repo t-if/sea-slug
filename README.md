@@ -28,7 +28,7 @@ Add these under the note's `cssclasses` property.
 | Width    | `width-800`, `width-900`, `width-1000`, `width-1200`, `width-1600`            |
 | Cleanup  | `no-backlinks`, `no-count`, `no-fold`, `clean-embed`                            |
 | Banners  | `banner`, `banner-fade`                                                             |
-| Bases    | `no-head`, `center-card`, `no-fade`, `mailbox-cards`, `pcbox`, `musicshelf` |
+| Bases    | `no-head`, `center-card`, `no-fade`, `no group`, `frameless-cards`, `mailbox-cards`, `pcbox`, `musicshelf` |
 | Text     | `colorful-headings`, `colorful-headings-alt`, `underlined-highlight`              |
 | Headings | `h1-center`–`h6-center`, `h1-bottom-border`–`h6-bottom-border`                |
 
@@ -55,13 +55,14 @@ cssclasses: [pcbox, no-fade]
 | `musicshelf`      | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view. |
 | `mailbox-cards`   | Airmail cards with hidden property labels; stays fully opaque. See the property names below.             |
 | `no-fade`         | Keeps other card styles fully opaque without hovering.                                                   |
+| `no-group`         | Hides group property label                                                   |
 | `no-head`         | Hides the embedded Base's toolbar/header; also works with other view types.                              |
 | `center-card`     | Centers card titles.                                                                                     |
 | `frameless-cards` | Cards without any background or container.                                                               |
 
 #### Bases Formulas
 
-If`frameless-cards` and `center-card` cssclasses are both applied to a note, `formula.center-subtitle` displays a property as a centered heading.
+If `frameless-cards` and `center-card` cssclasses are both applied to a note, `formula.center-subtitle` displays a property as a centered heading.
 
 In a Card Base view embedded in a note with the cssclass `mailbox-cards`, add these formulas with these exact names in this order:
 
