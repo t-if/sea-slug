@@ -4694,7 +4694,7 @@ body {
   --italic-color: var(--color-pink);
 }
 
-.theme-light, .theme-default.theme-light {
+.theme-default.theme-light {
   --accent-h: 323;
   --accent-s: 30%;
   --accent-l: 65%;
@@ -4724,7 +4724,7 @@ body {
   --color-base-100: #594f67;
 }
 
-.theme-dark, .theme-default.theme-dark {
+.theme-default.theme-dark {
   --accent-h: 323;
   --accent-s: 30%;
   --accent-l: 65%;
