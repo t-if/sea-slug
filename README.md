@@ -49,18 +49,25 @@ cssclasses: [pcbox, no-fade]
 ![[Collection.base]]
 ```
 
+#### Bases Card Styles
+
 | Class               | Effect                                                                                                   |
 | ------------------- | -------------------------------------------------------------------------------------------------------- |
 | `pcbox`           | Collection cards with centered titles and a gentle hover lift.                                           |
 | `musicshelf`      | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view. |
 | `mailbox-cards`   | Airmail cards with hidden property labels; stays fully opaque. See the property names below.             |
+| `frameless-cards` | Cards without any background or container.                                                               |
+
+#### Bases Cleanup Classes
+
+| Class               | Effect                                                                                                   |
+| ------------------- | -------------------------------------------------------------------------------------------------------- |
 | `no-fade`         | Keeps other card styles fully opaque without hovering.                                                   |
 | `no-group`         | Hides group property label                                                   |
 | `no-head`         | Hides the embedded Base's toolbar/header; also works with other view types.                              |
 | `center-card`     | Centers card titles.                                                                                     |
-| `frameless-cards` | Cards without any background or container.                                                               |
 
-#### Bases Formulas
+#### Base Formulas
 
 If `frameless-cards` and `center-card` cssclasses are both applied to a note, `formula.center-subtitle` displays a property as a centered heading.
 
@@ -96,8 +103,6 @@ Put an HTML aside before the paragraph it belongs to:
 ```html
 
 <aside class="aside-right">A short side note.</aside>
-
-  
 
 Your main paragraph goes here.
 ```
