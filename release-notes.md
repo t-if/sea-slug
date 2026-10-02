@@ -1,1 +1,1 @@
-Updated checkbox icons and fixed workspace borders. The theme is now always borderless, with 12px default roundness.
+Corrected the checkbox icons to use the intended solid set, including the original filled leaf.
