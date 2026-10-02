@@ -35,7 +35,7 @@ jobs:
           if (process.env.RELEASE_EVENT === 'push' && process.env.RELEASE_REF !== manifest.version) throw new Error('Tag must match the manifest version exactly.');
           if (!fs.statSync('theme.css').size) throw new Error('theme.css is empty.');
           fs.appendFileSync(process.env.GITHUB_ENV, `VERSION=${manifest.version}\n`);
-          fs.writeFileSync('release-notes.md', `Sea Slug ${manifest.version}\n\nSoft colors, flexible callouts, and styled Bases, with light and dark modes.\n\nRequires Obsidian ${manifest.minAppVersion} or later. Style Settings is recommended.\n\nThe attached manifest.json and theme.css are the installable theme files. See the repository README for usage and credits.\n`);
+          if (!fs.readFileSync('release-notes.md', 'utf8').trim()) throw new Error('Release notes are empty.');
           NODE
 
       - name: Publish theme assets
