@@ -179,6 +179,8 @@ Alternative checkboxes use solid silhouettes and freestanding symbols, with icon
 | `u`  | Up          | `d`  | Down      |                   |                 |
 | `R`  | Rule        | `m`  | ???       |                   |                 |
 
+Checklist tags also color [Kanban](https://github.com/community-archive/obsidian-kanban) cards.
+
 ## Installation
 
 1. Install and enable [BRAT](https://github.com/TfTHacker/obsidian42-brat).
