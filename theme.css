@@ -3316,64 +3316,65 @@ div[data-callout*="blank"].callout .callout-content::before {
    SECTION 08 — Tasks, Kanban cards and list layouts
    ========================================================================== */
 
-/* Checkboxes, mostly adapted from Kepano's Minimal theme */
+/* Alternative task symbols: Lucide, adapted for Sea Slug.
+Source: https://github.com/lucide-icons/lucide/tree/0c0e3ab3ae767294a5b2d2e466ec9ccab305887c/icons
+Stroke weight: 2.25. Info/question circles removed; viewBoxes adjusted.
+Info stem and baseline enlarged. All SVGs are embedded below.
+
+ISC License
+
+Copyright (c) 2026 Lucide Icons and Contributors
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+---
+
+The following Lucide icons are derived from the Feather project:
+
+airplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out
+
+The MIT License (MIT) (for the icons listed above)
+
+Copyright (c) 2013-present Cole Bemis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
 
 body {
   --checklist-done-decoration: none;
   --checkbox-icon: contain;
 }
 
-input[data-task="!"]:checked,
-input[data-task="*"]:checked,
-input[data-task="-"]:checked,
-input[data-task="<"]:checked,
-input[data-task=">"]:checked,
-input[data-task="I"]:checked,
-input[data-task="b"]:checked,
-input[data-task="c"]:checked,
-input[data-task="d"]:checked,
-input[data-task="f"]:checked,
-input[data-task="k"]:checked,
-input[data-task="l"]:checked,
-input[data-task="p"]:checked,
-input[data-task="u"]:checked,
-input[data-task="w"]:checked,
-input[data-task="m"]:checked,
-input[data-task="R"]:checked,
-li[data-task="!"] > input:checked,
-li[data-task="!"] > p > input:checked,
-li[data-task="*"] > input:checked,
-li[data-task="*"] > p > input:checked,
-li[data-task="-"] > input:checked,
-li[data-task="-"] > p > input:checked,
-li[data-task="<"] > input:checked,
-li[data-task="<"] > p > input:checked,
-li[data-task=">"] > input:checked,
-li[data-task=">"] > p > input:checked,
-li[data-task="I"] > input:checked,
-li[data-task="I"] > p > input:checked,
-li[data-task="b"] > input:checked,
-li[data-task="b"] > p > input:checked,
-li[data-task="c"] > input:checked,
-li[data-task="c"] > p > input:checked,
-li[data-task="d"] > input:checked,
-li[data-task="d"] > p > input:checked,
-li[data-task="f"] > input:checked,
-li[data-task="f"] > p > input:checked,
-li[data-task="k"] > input:checked,
-li[data-task="k"] > p > input:checked,
-li[data-task="l"] > input:checked,
-li[data-task="l"] > p > input:checked,
-li[data-task="p"] > input:checked,
-li[data-task="p"] > p > input:checked,
-li[data-task="u"] > input:checked,
-li[data-task="u"] > p > input:checked,
-li[data-task="w"] > input:checked,
-li[data-task="w"] > p > input:checked,
-li[data-task="m"] > input:checked,
-li[data-task="m"] > p > input:checked,
-li[data-task="R"] > input:checked,
-li[data-task="R"] > p > input:checked {
+input:is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="*"], [data-task='"'], [data-task="l"], [data-task="b"], [data-task="i"], [data-task="S"], [data-task="I"], [data-task="p"], [data-task="c"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="k"], [data-task="R"], [data-task="f"], [data-task="m"], [data-task="“"], [data-task="-"]):checked,
+li:is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="*"], [data-task='"'], [data-task="l"], [data-task="b"], [data-task="i"], [data-task="S"], [data-task="I"], [data-task="p"], [data-task="c"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="k"], [data-task="R"], [data-task="f"], [data-task="m"], [data-task="“"], [data-task="-"]) > input:checked,
+li:is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="*"], [data-task='"'], [data-task="l"], [data-task="b"], [data-task="i"], [data-task="S"], [data-task="I"], [data-task="p"], [data-task="c"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="k"], [data-task="R"], [data-task="f"], [data-task="m"], [data-task="“"], [data-task="-"]) > p > input:checked {
   --checkbox-marker-color: transparent;
 
   border: none;
@@ -3385,38 +3386,10 @@ li[data-task="R"] > p > input:checked {
   mask-size: var(--checkbox-icon);
 }
 
-input[data-task=">"]:checked,
-li[data-task=">"] > input:checked,
-li[data-task=">"] > p > input:checked {
-  color: var(--text-faint);
-  transform: rotate(90deg);
-  mask-position: 50% 100%;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z' /%3E%3C/svg%3E");
-}
-
-input[data-task="<"]:checked,
-li[data-task="<"] > input:checked,
-li[data-task="<"] > p > input:checked {
-  color: var(--text-faint);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z' clip-rule='evenodd' /%3E%3C/svg%3E");
-}
-
-input[data-task="?"]:checked,
-li[data-task="?"] > input:checked,
-li[data-task="?"] > p > input:checked {
-  --checkbox-marker-color: transparent;
-
-  background-color: var(--color-yellow);
-  border-color: var(--color-yellow);
-  background-position: 50% 50%;
-  background-size: 200% 90%;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="white" fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215c0 1.344-.665 2.288-1.79 2.973c-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712c1.03-.632 1.397-1.135 1.397-2.028c0-.979-.758-1.698-1.926-1.698c-1.009 0-1.71.529-1.938 1.402c-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09c0-.618-.473-1.092-1.095-1.092c-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14Z"%2F%3E%3C%2Fsvg%3E');
-}
-
-.theme-dark input[data-task="?"]:checked,
-.theme-dark li[data-task="?"] > input:checked,
-.theme-dark li[data-task="?"] > p > input:checked {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="black" fill-opacity="0.8" fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215c0 1.344-.665 2.288-1.79 2.973c-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712c1.03-.632 1.397-1.135 1.397-2.028c0-.979-.758-1.698-1.926-1.698c-1.009 0-1.71.529-1.938 1.402c-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09c0-.618-.473-1.092-1.095-1.092c-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14Z"%2F%3E%3C%2Fsvg%3E');
+input:is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="*"], [data-task='"'], [data-task="l"], [data-task="b"], [data-task="i"], [data-task="S"], [data-task="I"], [data-task="p"], [data-task="c"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="k"], [data-task="R"], [data-task="f"], [data-task="m"], [data-task="“"], [data-task="-"]):checked::after,
+li:is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="*"], [data-task='"'], [data-task="l"], [data-task="b"], [data-task="i"], [data-task="S"], [data-task="I"], [data-task="p"], [data-task="c"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="k"], [data-task="R"], [data-task="f"], [data-task="m"], [data-task="“"], [data-task="-"]) > input:checked::after,
+li:is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="*"], [data-task='"'], [data-task="l"], [data-task="b"], [data-task="i"], [data-task="S"], [data-task="I"], [data-task="p"], [data-task="c"], [data-task="w"], [data-task="u"], [data-task="d"], [data-task="k"], [data-task="R"], [data-task="f"], [data-task="m"], [data-task="“"], [data-task="-"]) > p > input:checked::after {
+  display: none;
 }
 
 input[data-task="/"]:checked,
@@ -3442,38 +3415,6 @@ li[data-task="/"] > p > input:checked::after {
   mask-image: none;
 }
 
-input[data-task="!"]:checked,
-li[data-task="!"] > input:checked,
-li[data-task="!"] > p > input:checked {
-  color: var(--color-orange);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z' clip-rule='evenodd' /%3E%3C/svg%3E");
-}
-
-input[data-task='"']:checked,
-input[data-task="“"]:checked,
-li[data-task='"'] > input:checked,
-li[data-task='"'] > p > input:checked,
-li[data-task="“"] > input:checked,
-li[data-task="“"] > p > input:checked {
-  --checkbox-marker-color: transparent;
-
-  background-position: 50% 50%;
-  background-color: var(--color-cyan);
-  border-color: var(--color-cyan);
-  background-size: 75%;
-  background-repeat: no-repeat;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"%2F%3E%3C%2Fsvg%3E');
-}
-
-.theme-dark input[data-task='"']:checked,
-.theme-dark input[data-task="“"]:checked,
-.theme-dark li[data-task='"'] > input:checked,
-.theme-dark li[data-task='"'] > p > input:checked,
-.theme-dark li[data-task="“"] > input:checked,
-.theme-dark li[data-task="“"] > p > input:checked {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="black" fill-opacity="0.7" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"%2F%3E%3C%2Fsvg%3E');
-}
-
 input[data-task="-"]:checked,
 li[data-task="-"] > input:checked,
 li[data-task="-"] > p > input:checked {
@@ -3493,134 +3434,167 @@ body:not(.tasks) li[data-task="-"].task-list-item.is-checked {
   text-decoration: line-through solid var(--text-faint) 1px;
 }
 
+/* Forwarded */
+input[data-task=">"]:checked,
+li[data-task=">"] > input:checked,
+li[data-task=">"] > p > input:checked {
+  color: var(--text-faint);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M5%2012h14%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22m12%205%207%207-7%207%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Scheduled */
+input[data-task="<"]:checked,
+li[data-task="<"] > input:checked,
+li[data-task="<"] > p > input:checked {
+  color: var(--text-faint);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M8%202v3%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M16%202v3%22%20%2F%3E%0A%20%20%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%2218%22%20height%3D%2218%22%20rx%3D%222%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M3%209h18%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Question */
+input[data-task="?"]:checked,
+li[data-task="?"] > input:checked,
+li[data-task="?"] > p > input:checked {
+  color: var(--color-yellow);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%226%205%2012%2015%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M9.09%209a3%203%200%200%201%205.83%201c0%202-3%203-3%203%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M12%2017h.01%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Important */
+input[data-task="!"]:checked,
+li[data-task="!"] > input:checked,
+li[data-task="!"] > p > input:checked {
+  color: var(--color-orange);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22m21.73%2018-8-14a2%202%200%200%200-3.48%200l-8%2014A2%202%200%200%200%204%2021h16a2%202%200%200%200%201.73-3%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M12%209v4%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M12%2017h.01%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Star */
 input[data-task="*"]:checked,
 li[data-task="*"] > input:checked,
 li[data-task="*"] > p > input:checked {
   color: var(--color-yellow);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' /%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M11.525%202.295a.53.53%200%200%201%20.95%200l2.31%204.679a2.123%202.123%200%200%200%201.595%201.16l5.166.756a.53.53%200%200%201%20.294.904l-3.736%203.638a2.123%202.123%200%200%200-.611%201.878l.882%205.14a.53.53%200%200%201-.771.56l-4.618-2.428a2.122%202.122%200%200%200-1.973%200L6.396%2021.01a.53.53%200%200%201-.77-.56l.881-5.139a2.122%202.122%200%200%200-.611-1.879L2.16%209.795a.53.53%200%200%201%20.294-.906l5.165-.755a2.122%202.122%200%200%200%201.597-1.16z%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
+/* Quote */
+input[data-task='"']:checked,
+li[data-task='"'] > input:checked,
+li[data-task='"'] > p > input:checked,
+input[data-task="“"]:checked,
+li[data-task="“"] > input:checked,
+li[data-task="“"] > p > input:checked {
+  color: var(--color-cyan);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M16%203a2%202%200%200%200-2%202v6a2%202%200%200%200%202%202%201%201%200%200%201%201%201v1a2%202%200%200%201-2%202%201%201%200%200%200-1%201v2a1%201%200%200%200%201%201%206%206%200%200%200%206-6V5a2%202%200%200%200-2-2z%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M5%203a2%202%200%200%200-2%202v6a2%202%200%200%200%202%202%201%201%200%200%201%201%201v1a2%202%200%200%201-2%202%201%201%200%200%200-1%201v2a1%201%200%200%200%201%201%206%206%200%200%200%206-6V5a2%202%200%200%200-2-2z%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Location */
 input[data-task="l"]:checked,
 li[data-task="l"] > input:checked,
 li[data-task="l"] > p > input:checked {
   color: var(--color-red);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z' clip-rule='evenodd' /%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M20%2010c0%204.993-5.539%2010.193-7.399%2011.799a1%201%200%200%201-1.202%200C9.539%2020.193%204%2014.993%204%2010a8%208%200%200%201%2016%200%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2210%22%20r%3D%223%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
+/* Bookmark */
+input[data-task="b"]:checked,
+li[data-task="b"] > input:checked,
+li[data-task="b"] > p > input:checked {
+  color: var(--color-purple);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M17%203a2%202%200%200%201%202%202v15a1%201%200%200%201-1.496.868l-4.512-2.578a2%202%200%200%200-1.984%200l-4.512%202.578A1%201%200%200%201%205%2020V5a2%202%200%200%201%202-2z%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Information */
 input[data-task="i"]:checked,
 li[data-task="i"] > input:checked,
 li[data-task="i"] > p > input:checked {
-  --checkbox-marker-color: transparent;
-
-  background-color: var(--color-blue);
-  border-color: var(--color-blue);
-  background-position: 50%;
-  background-size: 100%;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="40" d="M196 220h64v172"%2F%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-miterlimit="10" stroke-width="40" d="M187 396h138"%2F%3E%3Cpath fill="white" d="M256 160a32 32 0 1 1 32-32a32 32 0 0 1-32 32Z"%2F%3E%3C%2Fsvg%3E');
+  color: var(--color-blue);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%226%204%2012%2016%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M10%2010h2v8M10%2018h4%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M12%206h.01%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
-.theme-dark input[data-task="i"]:checked,
-.theme-dark li[data-task="i"] > input:checked,
-.theme-dark li[data-task="i"] > p > input:checked {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"%3E%3Cpath fill="none" stroke="black" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" stroke-width="40" d="M196 220h64v172"%2F%3E%3Cpath fill="none" stroke="black" stroke-opacity="0.8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="40" d="M187 396h138"%2F%3E%3Cpath fill="black" fill-opacity="0.8" d="M256 160a32 32 0 1 1 32-32a32 32 0 0 1-32 32Z"%2F%3E%3C%2Fsvg%3E');
-}
-
+/* Savings */
 input[data-task="S"]:checked,
 li[data-task="S"] > input:checked,
 li[data-task="S"] > p > input:checked {
-  --checkbox-marker-color: transparent;
-
-  border-color: var(--color-green);
-  background-color: var(--color-green);
-  background-size: 100%;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"%3E%3Cpath fill="white" fill-rule="evenodd" d="M26 8a2 2 0 1 0-4 0v2a8 8 0 1 0 0 16v8a4.002 4.002 0 0 1-3.773-2.666a2 2 0 0 0-3.771 1.332A8.003 8.003 0 0 0 22 38v2a2 2 0 1 0 4 0v-2a8 8 0 1 0 0-16v-8a4.002 4.002 0 0 1 3.773 2.666a2 2 0 0 0 3.771-1.332A8.003 8.003 0 0 0 26 10V8Zm-4 6a4 4 0 0 0 0 8v-8Zm4 12v8a4 4 0 0 0 0-8Z" clip-rule="evenodd"%2F%3E%3C%2Fsvg%3E');
+  color: var(--color-green);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cline%20x1%3D%2212%22%20x2%3D%2212%22%20y1%3D%222%22%20y2%3D%2222%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M17%205H9.5a3.5%203.5%200%200%200%200%207h5a3.5%203.5%200%200%201%200%207H6%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
-.theme-dark input[data-task="S"]:checked,
-.theme-dark li[data-task="S"] > input:checked,
-.theme-dark li[data-task="S"] > p > input:checked {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"%3E%3Cpath fill-opacity="0.8" fill="black" fill-rule="evenodd" d="M26 8a2 2 0 1 0-4 0v2a8 8 0 1 0 0 16v8a4.002 4.002 0 0 1-3.773-2.666a2 2 0 0 0-3.771 1.332A8.003 8.003 0 0 0 22 38v2a2 2 0 1 0 4 0v-2a8 8 0 1 0 0-16v-8a4.002 4.002 0 0 1 3.773 2.666a2 2 0 0 0 3.771-1.332A8.003 8.003 0 0 0 26 10V8Zm-4 6a4 4 0 0 0 0 8v-8Zm4 12v8a4 4 0 0 0 0-8Z" clip-rule="evenodd"%2F%3E%3C%2Fsvg%3E');
-}
-
+/* Idea */
 input[data-task="I"]:checked,
 li[data-task="I"] > input:checked,
 li[data-task="I"] > p > input:checked {
   color: var(--color-yellow);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z' /%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M15%2014c.2-1%20.7-1.7%201.5-2.5%201-.9%201.5-2.2%201.5-3.5A6%206%200%200%200%206%208c0%201%20.2%202.2%201.5%203.5.7.7%201.3%201.5%201.5%202.5%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M9%2018h6%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M10%2022h4%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
-input[data-task="f"]:checked,
-li[data-task="f"] > input:checked,
-li[data-task="f"] > p > input:checked {
-  color: var(--color-red);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z' clip-rule='evenodd' /%3E%3C/svg%3E");
-}
-
-input[data-task="k"]:checked,
-li[data-task="k"] > input:checked,
-li[data-task="k"] > p > input:checked {
-  color: var(--color-yellow);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z' clip-rule='evenodd' /%3E%3C/svg%3E");
-}
-
-input[data-task="u"]:checked,
-li[data-task="u"] > input:checked,
-li[data-task="u"] > p > input:checked {
-  color: var(--color-green);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z' clip-rule='evenodd' /%3E%3C/svg%3E");
-}
-
-input[data-task="d"]:checked,
-li[data-task="d"] > input:checked,
-li[data-task="d"] > p > input:checked {
-  color: var(--color-red);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M12 13a1 1 0 100 2h5a1 1 0 001-1V9a1 1 0 10-2 0v2.586l-4.293-4.293a1 1 0 00-1.414 0L8 9.586 3.707 5.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0L11 9.414 14.586 13H12z' clip-rule='evenodd' /%3E%3C/svg%3E");
-}
-
-input[data-task="w"]:checked,
-li[data-task="w"] > input:checked,
-li[data-task="w"] > p > input:checked {
-  color: var(--color-purple);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z' clip-rule='evenodd' /%3E%3C/svg%3E");
-}
-
+/* Pro */
 input[data-task="p"]:checked,
 li[data-task="p"] > input:checked,
 li[data-task="p"] > p > input:checked {
   color: var(--color-green);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z' /%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M15%205.88%2014%2010h5.83a2%202%200%200%201%201.92%202.56l-2.33%208A2%202%200%200%201%2017.5%2022H4a2%202%200%200%201-2-2v-8a2%202%200%200%201%202-2h2.76a2%202%200%200%200%201.79-1.11L12%202a3.13%203.13%200%200%201%203%203.88Z%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M7%2010v12%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
+/* Con */
 input[data-task="c"]:checked,
 li[data-task="c"] > input:checked,
 li[data-task="c"] > p > input:checked {
-  color: var(--color-orange);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z' /%3E%3C/svg%3E");
+  color: var(--color-pink);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M9%2018.12%2010%2014H4.17a2%202%200%200%201-1.92-2.56l2.33-8A2%202%200%200%201%206.5%202H20a2%202%200%200%201%202%202v8a2%202%200%200%201-2%202h-2.76a2%202%200%200%200-1.79%201.11L12%2022a3.13%203.13%200%200%201-3-3.88Z%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M17%2014V2%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
+/* Win */
+input[data-task="w"]:checked,
+li[data-task="w"] > input:checked,
+li[data-task="w"] > p > input:checked {
+  color: var(--color-yellow);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M10%2014.66V17a1%201%200%200%201-1%201%202%202%200%200%200-2%202v2%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M14%2014.66V17a1%201%200%200%200%201%201%202%202%200%200%201%202%202v2%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M17.916%2010H19.5A2.5%202.5%200%200%200%2022%207.5V5a1%201%200%200%200-1-1h-3%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M4%2022h16%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M6%209a6%206%200%200%200%2012%200V3a1%201%200%200%200-1-1H7a1%201%200%200%200-1%201z%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M6.084%2010H4.5A2.5%202.5%200%200%201%202%207.5V5a1%201%200%200%201%201-1h3%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Up */
+input[data-task="u"]:checked,
+li[data-task="u"] > input:checked,
+li[data-task="u"] > p > input:checked {
+  color: var(--color-green);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M16%207h6v6%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22m22%207-8.5%208.5-5-5L2%2017%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Down */
+input[data-task="d"]:checked,
+li[data-task="d"] > input:checked,
+li[data-task="d"] > p > input:checked {
+  color: var(--color-red);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M16%2017h6v-6%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22m22%2017-8.5-8.5-5%205L2%207%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Key */
+input[data-task="k"]:checked,
+li[data-task="k"] > input:checked,
+li[data-task="k"] > p > input:checked {
+  color: var(--color-yellow);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M2.586%2017.414A2%202%200%200%200%202%2018.828V21a1%201%200%200%200%201%201h3a1%201%200%200%200%201-1v-1a1%201%200%200%201%201-1h1a1%201%200%200%200%201-1v-1a1%201%200%200%201%201-1h.172a2%202%200%200%200%201.414-.586l.814-.814a6.5%206.5%200%201%200-4-4z%22%20%2F%3E%0A%20%20%3Ccircle%20cx%3D%2216.5%22%20cy%3D%227.5%22%20r%3D%22.5%22%20fill%3D%22black%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Rule */
 input[data-task="R"]:checked,
 li[data-task="R"] > input:checked,
 li[data-task="R"] > p > input:checked {
-  width: 18px;
-  height: 18px;
-  background-color: var(--color-yellow);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21.9,11.553l-3-6a.846.846,0,0,0-.164-.225A.987.987,0,0,0,18,5H13V3a1,1,0,0,0-2,0V5H6a.987.987,0,0,0-.731.328.846.846,0,0,0-.164.225l-3,6a.982.982,0,0,0-.1.447H2a4,4,0,0,0,8,0H9.99a.982.982,0,0,0-.1-.447L7.618,7H11V20H6a1,1,0,0,0,0,2H18a1,1,0,0,0,0-2H13V7h3.382l-2.277,4.553a.982.982,0,0,0-.1.447H14a4,4,0,0,0,8,0h-.01A.982.982,0,0,0,21.9,11.553ZM7.882,12H4.118L6,8.236Zm8.236,0L18,8.236,19.882,12Z'/%3E%3C/svg%3E");
+  color: var(--color-yellow);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M16%205a4%203%200%200%200-8%200c0%204%208%203%208%207a4%203%200%200%201-8%200%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M8%2019a4%203%200%200%200%208%200c0-4-8-3-8-7a4%203%200%200%201%208%200%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
+/* Fire */
+input[data-task="f"]:checked,
+li[data-task="f"] > input:checked,
+li[data-task="f"] > p > input:checked {
+  color: var(--color-red);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M12%203q1%204%204%206.5t3%205.5a1%201%200%200%201-14%200%205%205%200%200%201%201-3%201%201%200%200%200%205%200c0-2-1.5-3-1.5-5q0-2%202.5-4%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* ??? */
 input[data-task="m"]:checked,
 li[data-task="m"] > input:checked,
 li[data-task="m"] > p > input:checked {
-  width: var(--checkbox-size, 1em);
-  height: var(--checkbox-size, 1em);
-  background-color: var(--color-green);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' version='1.0' viewBox='0 0 1280 1277'%3E%3Cpath d='M635.8 8.8c-6.4 13.9-15.6 48.8-23.2 87.7C609 115 604 146 604 149.8c0 3.9-2.2 3.6-6.3-.9l-4-4.3-2.7 3.3c-6.4 7.6-12.4 28.2-14.2 48.8-.7 7.3-1.6 13.3-2.1 13.3-.4 0-3.1-1.6-6-3.5-2.8-1.9-5.5-3.5-5.9-3.5-1.1 0-3.6 9.4-5.2 20-2.4 14.7-3.8 39.4-3.1 51.2.5 7.4.4 10.8-.4 10.8-.5 0-4.5-2.4-8.8-5.3-9.5-6.4-13.7-8.2-15.3-6.2-2.1 2.5-3.1 19.1-2 32.9 1.6 20 5.3 36.7 11.5 50.8 1.4 3.4-2.3 1.9-13.1-5.2-11.4-7.5-15.1-9.1-16.4-6.9-1.7 2.7-2.2 16.6-1.1 29.1 1.4 15.8 4.9 29.9 9.8 39.8 2 4.1 3.7 7.9 3.7 8.4.2 2.2-2.5 1.3-10.8-3.4-14.7-8.5-17.6-8-17.6 2.9 0 14.4 8.8 44 19 64.4 3.3 6.5 6 12.1 6 12.4 0 1.3-5.7-1.2-15-6.6-5.6-3.3-10.8-5.7-11.5-5.5-2.3.9-3.5 5.5-3.5 13.8 0 17.9 8.7 38.6 23.7 56.3 2.9 3.4 5.3 6.7 5.3 7.3 0 1.4-3.3 1.2-10.5-.5-13.3-3.2-15.6-1.6-13.6 9.9 2 11.3 9 28.5 18.6 45.6 3 5.4 5.5 10.1 5.5 10.4 0 1.5-3.6.3-9.4-2.9-7.3-4-8.6-4.2-11.1-1.5-1.5 1.7-1.7 3.2-1.2 9.7 1.2 17.2 10.7 38.5 27.3 61 2.2 3 1 4.3-4 4.3-6.2 0-10.5 1.8-11.2 4.5-.9 3.5.7 7.4 12.7 33.1 5.9 12.7 11.1 24.3 11.5 25.8.5 2.3.3 2.6-1.7 2.6-1.9 0-3-1.2-5.3-5.5-1.6-3.1-3.7-6-4.7-6.6-2.3-1.2-6.2.6-9.8 4.5-2.8 2.9-5.1 2-5.1-1.9 0-1.3-1.2-6.3-2.6-11.1-6.5-22.7-19.4-43.4-26.9-43.4-2.9 0-4.1 2-5.6 8.9-.6 2.9-1.6 5.1-2.4 5.1-.7 0-2.6-4-4.4-9.3-4.5-13-14.3-32.5-19-37.6-5.5-6-7.5-5.5-12.8 3.4-2.3 3.8-4.6 7.1-5.2 7.3-.5.2-1.3-1.4-1.6-3.5-3.5-22.8-9.1-36.2-19.7-47.8-5.3-5.8-9.3-8.5-12.7-8.5-2.2 0-2.9 2-5.1 13.6-1.4 7.1-2.5 9.3-3.8 7.9-.6-.6-2.7-5.3-4.7-10.5-6.9-17.5-20.9-39.9-29.9-47.8-6.3-5.5-7.5-4.6-10.8 8.8-2.6 10.6-4.2 12-6.5 5.5-2.1-6-6.1-13.4-10.6-19.5-8.2-11.1-26.1-28-29.6-28-1.7 0-3 4.1-4.6 15.3-.9 5.6-1.8 10.3-2 10.5-.7.7-3.5-1.9-3.5-3.1 0-1.7-8.9-15.5-14.3-22.1-9.7-11.9-22.6-23.9-29.6-27.6-3.6-1.9-4.9.3-6.5 10.8-.7 5.1-1.6 9.6-2 9.9-.3.4-4.1-2.7-8.4-6.8-16.4-15.9-43.7-35.1-47.7-33.5-.7.2-1.6 2.7-2 5.5-.8 5.9-2.7 6.7-6.5 2.6-8.6-9.1-34.7-22.5-44.1-22.5h-3.1l.6 4.4c.4 2.6.3 4.7-.3 5-.5.4-8.1-4-16.8-9.8-20.8-13.6-41.7-25.8-63.8-37.2C17.9 441.3 7.6 437 3 437H0l5.5 10.6c9.7 18.6 40.7 62.8 61.9 87.9 4.1 4.9 7.6 9.6 7.6 10.2 0 .8-1.4 1.3-3.7 1.3-6.2 0-6.8.9-4.9 6.7 3.5 10.6 14.6 27.1 25 37.3 2.5 2.4 4.6 4.7 4.6 5.1 0 .4-2.5 1.5-5.5 2.4-3.2.9-5.5 2.1-5.5 2.9 0 4.1 29.9 37 41.2 45.3 2.7 1.9 4.8 4 4.8 4.7 0 .8-2.9 2-7.2 3.1-8.8 2.1-12.8 4-12.8 6.1 0 2.2 12 14.4 20.5 20.9 9.4 7.2 22.1 14.8 30.6 18.2 3.8 1.5 6.9 3.3 6.9 3.9 0 .7-3.7 2.1-8.3 3.3-18.6 4.9-19 5.7-8.9 15.3 12.9 12.2 28.6 21.8 42 25.8 8.7 2.6 8.4 3.9-1.4 7-8.6 2.6-12.4 4.7-12.4 6.8 0 7.1 32.9 24.6 58.5 31.2 4.1 1 7 2.3 7 3.1 0 .7-4.4 2.7-10.3 4.7-5.7 1.9-10.6 4.1-10.9 4.8-1 2.7 4.5 9.2 12.2 14.2 10.4 6.8 23.4 11 38.6 12.5 7.1.6 11.9 1.5 11.9 2.1 0 .6-2.9 3.2-6.5 5.8-7.8 5.7-8.4 8.1-3 12.3 6.8 5.1 24.7 11.9 42.8 16.1 4.6 1.1 7.7 2.3 7.7 3 0 .7-2.3 2-5.2 2.9-5.4 1.6-8.8 3.9-8.8 6.1 0 3 6.5 8.5 15.3 12.8 11.3 5.6 24.1 9.3 36.9 10.8 5.4.7 9.8 1.5 9.8 1.9 0 .5-1.4 3-3 5.6-1.7 2.6-3 5.5-3 6.5 0 3.3 3.6 4.7 36.6 14.7 9 2.7 10.3 3.4 11.4 6 1.9 4.6.5 5.4-4.8 2.7-7.2-3.6-16.3-7.2-21.9-8.5-6.6-1.6-9.8-.3-8.8 3.6 2.4 9.6 1.9 10-5.2 4.9-7.4-5.2-14.9-8.6-22.5-10.2-7.6-1.6-13.6-1-14.5 1.3-.3.9.7 3.9 2.3 6.9 1.6 2.9 2.5 5.6 2.1 6-.4.4-3.7-.7-7.4-2.4-14.8-6.8-36.4-11.2-39.1-8-1 1.2-.6 2.6 1.9 7.3 1.6 3.1 2.8 5.9 2.5 6.2-.3.3-4.5-.7-9.3-2.3-7.8-2.5-10.3-2.9-21.3-2.9-14.8 0-15.3.5-9.5 9.2 2 3 3.4 5.8 3 6.1-.3.3-3.4-.2-6.9-1.1-16.1-4.3-40.6-4.5-40.6-.3 0 .7 1.3 3.3 3 5.7 1.6 2.4 3 4.9 3 5.5 0 .7-4.8 1.3-13.7 1.7-13.8.6-28.9 2.9-30.6 4.6-.5.5-.2 1.9.8 3.4.9 1.5 1.4 3 1.1 3.5-.3.5-3.7 1.2-7.6 1.6-8.2.7-21.9 5-25.6 7.9-2.3 1.8-2.4 2.1-1 3.6 2.2 2.4 2 4-.6 4.5-1.3.3-10.8 2.1-21.3 4.2-28.7 5.5-57.9 14-60 17.3-1.7 2.8 19.5 8.9 50.5 14.6 10.2 1.8 21.5 3.6 25.1 4 8.4.9 9.9 1.7 7.6 4.3-.9 1-1.7 2.2-1.7 2.6 0 2.5 17.8 7.9 30.3 9.2 5.2.5 5.8.8 5.3 2.5-.3 1-.9 2.8-1.2 3.8-.5 1.6.1 2.2 3.3 3 5.9 1.6 29.1 3.4 35 2.7 2.9-.3 5.4-.2 5.8.4.3.5-.9 3.5-2.6 6.6-2.6 4.6-3 5.8-1.8 6.6.8.5 7.1.7 14.9.5 12.5-.5 17.9-1.4 30.3-5.4 2.6-.8 2.1 1.5-1.8 7.7-1.9 3-3.5 6-3.5 6.7 0 2.1 7 2.7 17.6 1.5 8.5-.9 15.9-2.9 24.7-6.7 2.5-1.1 2.2 1.6-1 7.5-2.8 5-2.8 5.1-.8 6.6 1.4 1 3.2 1.3 6.5.8 8-1.2 21.3-5.4 30.3-9.6 4.8-2.3 9-3.8 9.4-3.4.5.4-.6 3.3-2.4 6.5-1.7 3.1-2.9 6.2-2.5 6.7 3.5 5.4 26.1-.8 36.9-10 5.8-5 6.5-4.7 6.1 2.1l-.3 5.8 3.3.3c4.4.4 11.8-2.1 23.5-8 5.4-2.8 10-4.8 10.3-4.5.3.3 0 2.1-.7 4-1.8 4.9-.7 6.7 3.9 6.7 7.8 0 19.4-4.6 30.5-12.2 5.8-3.9 7.7-4.1 7.7-.9 0 3.5 2.5 5.4 7.1 5.5 3.2.1 4.4.5 4.7 1.7.2 1.3-1.1 1.9-6.4 2.8-14.5 2.6-24.5 11.1-16.3 14 4.2 1.4 3.3 3.1-2.7 5.1-10.9 3.7-22.2 10.8-20.9 13.1.4.5 1.9 1.6 3.6 2.4 1.6.9 2.9 1.9 2.9 2.3 0 .5-2.7 2.1-6.1 3.7-7.1 3.5-17.9 12.8-16.4 14.3.6.5 2.7 1.5 4.8 2.2 4.4 1.4 4.6 2.3 1 3.9-7.8 3.6-21.3 14.5-21.3 17.4 0 .9 1.5 2 3.5 2.7 1.9.6 3.5 1.5 3.5 1.9 0 .4-4 4.9-8.9 9.9-9.8 10.1-11.3 12.6-8.5 14.6 1.6 1.2 1.4 1.8-2.8 7.2-7.5 9.7-9.3 14.6-6.3 16.8 1.3 1 .4 2.7-6.5 11.5-14.6 18.7-26.5 37.9-24.7 39.7.8.8 27.5-13.1 39.6-20.5 6.2-3.9 11.7-7.1 12.2-7.1.4 0 1.2.8 1.8 1.7.9 1.7 1.2 1.7 6.3-.1 2.9-1 7.6-3.4 10.4-5.2 6-4 7-4.1 7.7-1.3l.6 2.1 4.1-2.3c2.3-1.3 7.7-5.2 12-8.6 4.3-3.5 8.3-6.3 8.8-6.3.6 0 1.4 1.7 1.9 3.7.4 2 1.4 3.8 2 4 1.6.6 14.7-12 18-17.3 1.5-2.4 3.2-4.3 3.7-4.1.5.2 1.4 2.1 2 4.2.6 2.1 1.6 4 2.3 4.2 1.6.6 12.5-10.5 15.8-16.1 1.5-2.5 3.1-4.6 3.6-4.6s1.2 1.4 1.6 3.1c1.6 8 8.2 2.1 16.8-15 2-3.9 4-7.1 4.4-7.1.5 0 1.3 1.7 1.8 3.7.4 2 1.4 3.8 2.1 4.1 2.3.7 9.8-8.2 12.1-14.2 1.2-3.1 2.1-6.5 2.1-7.6 0-2.9 2.1-3.6 4.1-1.2.9 1.2 2.2 2.2 2.7 2.2 2.6 0 8.1-8.9 12.4-20l1-2.5 2.2 2.8c1.4 1.7 2.8 2.6 3.8 2.2 3.3-1.3 8.6-10.6 11.3-19.8 1.7-6 2.3-6.5 5.6-4.5 2.6 1.7 3.7.3 8.5-11.4 2.1-4.9 4.1-9.1 4.5-9.4.5-.2 1.8.1 2.9.8 1.9 1.1 2.4 1 4-1 2.3-2.8 3.5-6.8 5.1-17.1 1.4-8.8 1.9-9.7 4.8-8.2 3.1 1.7 4.4-1.1 9.6-21.8 2.6-10.2 5.2-19.5 5.8-20.8 1.8-3.9 3-2.6 2.3 2.4-1.1 9.2-3.6 38-4.6 54-1 17.4-.6 24.3 4.4 71.3 3.3 31.2 4.9 56.7 4.5 73.3-.4 14.8-.5 14.7 5.1 14.7 6.2 0 6 .6 6-20.9 0-24.3-1.1-39.5-5.5-81.9-1.9-18.4-3.5-38.4-3.5-44.6 0-13.4 2.2-41.6 5.6-72.4.8-7.3 1.8-9.2 3.2-6.6.6 1.1 3.8 11.1 7.2 22.4 3.4 11.2 7.1 22.9 8.3 26 2.2 5.5 3.2 6.1 7.6 4.9 1.1-.3 1.9 2.1 3.3 9.9 1 5.7 2.5 11.9 3.3 13.9 1.4 3.3 1.7 3.5 4.9 3 4.2-.7 4.3-.5 8.5 9.8 4.1 10.1 4.6 10.6 8.8 10.3 3.4-.3 3.5-.2 5.2 5.2 4.3 13.6 12.3 23.2 14.5 17.5 1.1-3 3.2-1.4 5.4 4.4 2.7 7 7.6 14.1 9.7 14.1.8 0 1.9-.9 2.5-2 1.7-3.2 3.7-2.4 4.5 1.7 1.5 8.7 10.4 22.1 13.8 21 .7-.2 1.7-1.9 2.3-3.8.7-1.9 1.5-3.3 2-3.3.4.1 2.5 3.4 4.6 7.4 4.4 8.5 10.2 16.6 12.4 17.4 2.2.9 3.1 0 3.9-3.4.4-1.7 1.1-3 1.5-3 .5 0 2.5 2.4 4.3 5.2 3.8 5.9 13.4 15.8 15.3 15.8.7 0 1.7-1.9 2.1-4.2.5-2.4 1.4-4.3 2-4.3.6 0 3.1 2.7 5.5 6 4.5 6.1 11 12.5 14.7 14.4 1.6.9 2.2.8 3.1-.8.5-1.1 1-2.9 1-4 0-3.3 2.8-2.5 8.2 2.4 2.7 2.4 7.7 6.3 11.1 8.5l6.1 4.1 1.8-2.3c1.4-1.9 2-2.1 3.5-1.1 5.2 3.7 12.2 7.5 15.7 8.5 3.3 1 4 1 5.1-.5.7-.9 1.6-1.7 2-1.7.4 0 5.5 3 11.4 6.7 15.5 9.8 39.5 21.8 39.9 19.9.7-3.1-8.1-17.3-21.7-34.9-10.9-14.2-11-14.3-8.7-16 1.8-1.3 1.8-1.5-.1-5.8-1.1-2.4-4.1-7.1-6.8-10.3l-4.8-5.9 2.2-1.7 2.3-1.6-4-5c-2.2-2.7-6.7-7.6-10.1-10.9-3.4-3.3-6.1-6.3-6.1-6.7 0-.4 1.8-1.2 4-1.8 2.2-.6 4-1.7 4-2.5 0-2-10.1-10.6-17.6-15-3.5-2.1-6.3-4.3-6.1-4.8.2-.6 1.9-1.6 3.8-2.2 3.1-1.1 3.5-1.6 3.1-4.4-.3-1.5-12.3-10.2-16.9-12.3-5.7-2.5-6-3.5-1.8-5.2 1.9-.8 3.5-2.2 3.5-3.1 0-2.7-11.7-9.2-25.2-13.8-2.8-1-2.1-2.5 1.8-4.2 2.9-1.2 3.3-1.7 2.5-3.2-2.4-4.6-10-8.7-19.5-10.4-3.6-.7-6.6-1.6-6.6-2 0-1.5 2.9-2.9 5.7-2.7 3.9.3 5-.6 5.7-4.7.8-4.2 1.7-4.3 6.5-.7 10.9 8.6 29.1 15 35.5 12.6 2-.8 2-2.7.1-6.4-2.3-4.5-.3-4.5 7.7-.1 10.2 5.6 20.4 9.3 24.7 8.9l3.6-.3-.2-5.8c-.1-3.2.2-5.7.8-5.7.5 0 3.3 1.8 6.2 3.9 10.3 7.8 25.2 13 32.9 11.4 4.1-.8 4.4-2.5 1.4-7.7-2.3-3.9-3.4-7.6-2.2-7.6.2 0 4.1 1.8 8.8 3.9 9.7 4.5 19.5 7.7 27.8 9 10.4 1.7 12.2-.4 7.4-8.6-1.4-2.4-2.2-4.7-1.9-5.2.3-.5 3.2.1 6.5 1.5 9.7 3.9 30.3 6.7 35.4 4.8 2.4-.9 1.9-3.5-1.8-9.4-1.9-3-3.2-5.8-2.8-6.2.4-.4 4.5.5 9.2 1.9 7.3 2.2 10.5 2.6 23 2.7 16.5.1 17.1-.2 12.6-7.3-4.1-6.4-3.6-7.3 3.2-6.5 9.2 1 39.2-2.2 39.2-4.2 0-.3-.7-1.9-1.6-3.5-.8-1.7-1.4-3.3-1.2-3.5.2-.2 4.3-.8 9.1-1.3 9.9-1.1 15.2-2.4 22-5.3 4.7-2.1 5.6-3.5 3.6-5.5-2.5-2.5-.1-3.9 9.2-5 31.1-4 73.9-14.3 73.9-17.8 0-3.6-42.8-15.7-73-20.5-4.1-.7-8.3-1.7-9.3-2.2-1.7-.9-1.7-1.1-.3-2.7.9-1 1.6-2.3 1.6-3 0-3.1-21.9-10.1-31.5-10.1-2.8 0-3.5-.4-3.5-1.9 0-1.1.5-2.3 1-2.6 1.9-1.2 1-3.6-1.7-4.6-4.3-1.6-22.9-3.9-32.5-3.9-4.8 0-8.9-.3-9.2-.8-.2-.4 1.1-3.2 3-6.2 3.1-4.9 3.3-5.6 1.9-7-2.5-2.4-24.4-1.9-35.8.9-4.9 1.1-9.3 2.1-9.8 2.1-1.7 0-.9-2 2.6-7.3 5.5-8.1 5-8.7-8-8.7-9.2 0-20.7 1.9-27.3 4.5-2.4 1-4.6 1.5-4.9 1.1-.4-.4.6-3 2.2-6 1.6-3.1 2.6-6 2.2-6.9-1.5-3.9-19.1-.8-37 6.5-5.4 2.2-10.1 3.8-10.4 3.4-.3-.3.9-3.1 2.6-6.2 1.8-3.1 3-6.2 2.7-6.9-.7-2-7.1-2.7-13.8-1.5-7.4 1.4-16.4 5.4-23.3 10.4-2.7 2-5.4 3.6-5.8 3.6-.5 0-.6-2.7-.2-5.9.6-5.4.5-6-1.4-6.6-3.1-1-13.4 2-24 7.1-10.1 4.7-12.7 4.7-10.1-.2 1.9-3.4 1.9-3.4 22-9.4 26.6-7.8 29.1-9.9 23-18.4-1.8-2.4-3-4.9-2.6-5.4.3-.5 4.1-1.2 8.5-1.6 15.2-1.2 34.8-7.7 45.4-15 10.3-7 10-11.6-.8-15-3.1-.9-5.5-2.2-5.3-2.8.3-.7 6-2.6 12.9-4.4 18.1-4.7 30.3-9.6 37.7-15.1 5-3.8 4.4-6.3-3.3-11.9-3.6-2.6-6.5-5.3-6.5-5.9 0-.8 3.4-1.4 9.8-1.8 17.7-1.2 33.9-6.8 44.9-15.6 5.2-4 8.8-9.2 8.1-11.3-.2-.6-5.1-2.7-10.8-4.7-10.8-3.7-13.2-5.6-8.3-6.6 8.3-1.7 28.6-9.1 38.4-14 20.1-10 28.4-17.5 23.4-21.2-1.1-.7-5.6-2.5-10.2-4-9.9-3.1-10.5-4.9-2.5-6.9 6.8-1.8 17-6.8 26.1-12.8 8.8-5.9 23.1-19.2 23.1-21.6 0-2.1-3.1-3.5-14.7-6.4-5.6-1.4-8.8-2.7-8.8-3.6 0-.7 3-2.5 6.8-4 13.2-5.4 31-17.5 42.8-29.2 6.8-6.7 8.9-10.2 7.1-12-.6-.6-5-2.1-9.8-3.4-4.8-1.3-9.1-2.7-9.6-3.2s1.4-2.7 4.5-5.1c12-9.2 41.7-41.7 41.7-45.6 0-.7-2.1-1.8-4.7-2.5-2.7-.7-5.2-1.7-5.7-2.1-.5-.5 2.3-4.2 6.6-8.7 8.8-9.2 14.6-17.5 19.4-27.5 4.4-9.4 4.7-12.1 1.4-12.5-4.7-.5-7-1.2-7-2.2 0-.5 4.4-6.3 9.7-12.7 23.4-28.5 49.6-65.9 59.7-85.2l5.9-11.4-4 .5c-12.2 1.7-59.1 26.6-98 52-8.4 5.5-15.7 9.7-16.3 9.3-.7-.5-.9-2.1-.5-4.6.8-4.9-.6-5.7-7.3-3.9-11 2.9-28.4 12.4-39 21.4-2.4 2-4.8 3.4-5.2 3.1-.4-.3-1.1-2.8-1.5-5.6-.4-2.8-1.3-5.3-2.1-5.6-3.5-1.3-31.8 18.8-49 34.9-7.4 7-7.8 6.9-8.7-2.5-.8-8.5-2.4-12.7-4.9-12.7-7.6 0-34.7 28.6-43.8 46.2-1.9 3.8-3.9 6.6-4.5 6.5-1-.4-1.5-2.5-3.5-15.4-.6-3.9-1.7-7.9-2.4-8.8-1.1-1.6-1.5-1.6-4.3-.2-4.9 2.6-18.8 16.2-25.5 25.1-5.6 7.4-11.8 18.5-13.1 23.6-.3 1.1-1 2-1.5 2-1.3 0-2-2-3.8-10.5-1.6-7.6-3.6-11.5-5.9-11.5-6.8 0-28.2 32.3-36 54.2-1.5 4.3-3.3 7.8-4 7.8-1.2 0-3.1-6.3-5.1-17.3-1.2-7.1-6.2-6.2-14.9 2.6-9.7 10-16.9 25.5-19.8 43.2-.9 5.4-1.8 8-2.7 8-.7 0-3-2.7-4.9-5.9-2-3.3-4.4-6.4-5.3-7-5.5-3.4-16.5 13.4-25.8 39.4-2.3 6.3-4.3 10.5-5.1 10.5-.9 0-1.9-2.2-2.7-5.5-2.5-10.2-5.2-10.6-13.3-2-7.4 7.7-15.9 24.6-19.4 38.4-1.4 5.4-2.5 10.7-2.5 11.7 0 3.3-2 3.1-6-.5-6.3-5.7-9.4-4.8-13.9 4.1-1.7 3.4-2.7 4.3-4.7 4.3-2.4 0-2.5-.3-1.9-2.8.4-1.5 5-11.7 10.2-22.7 10-20.8 14.3-31.3 14.3-34.4 0-3.2-3.6-5.4-10.2-6-3.4-.3-6.3-1.1-6.5-1.6-.2-.6 1.7-3.7 4.1-6.9 14.1-18.9 24.6-44.3 24.6-59.6 0-9.8-4.2-11.3-14.3-4.8-7.7 4.9-8.5 3.3-3.2-6.4 9.8-17.6 16.5-33.6 19.1-45.6 2.8-13.3.6-15.2-14.1-11.7-7.1 1.7-9.5 1.9-9.5.5 0-.6 2.4-3.9 5.3-7.3 14.8-17.4 23.6-38.5 23.7-56.4 0-8.2-1.2-12.8-3.5-13.7-.8-.2-5.8 2.2-11.3 5.4-9.2 5.5-15.2 8.1-15.2 6.6 0-.4 2.5-5.7 5.6-11.9 10.3-20.4 18-45.4 19.1-61.4.9-14.2-1.1-15.3-15-7.3-8.4 4.8-13.7 6.9-13.7 5.5 0-.4 1.8-4.4 4-8.8 5.2-10.5 8.6-24.3 10.1-40.5 1.1-12.5.6-26.4-1.1-29.1-1.3-2.2-5-.6-16.4 6.9-10.8 7.1-14.5 8.6-13.1 5.2 6.1-13.9 9.8-30.7 11.5-50.9 1.1-13.7.1-30.3-2-32.8-1.6-2-5.8-.3-15.1 6.2-4.3 2.9-8.4 5.3-9 5.3-.8 0-1-2.8-.5-10.3.8-11.5-.7-37.4-2.9-51.7-1.7-10.6-4.2-20-5.3-20-.4 0-3.1 1.6-5.9 3.5-2.9 1.9-5.6 3.5-6.1 3.5-.4 0-1.3-6-2-13.3-1.3-15.6-4.9-30.1-10.1-41.2-5.3-11.3-6.1-11.7-11-6.3-2.6 2.7-4.3 3.9-4.9 3.3-.6-.6-1.7-6.6-2.7-13.5-4.8-35-16.7-90.1-25.2-116.5-3.5-10.9-7.4-19.8-9.2-20.9-.4-.3-2.4 2.9-4.3 7.2z'/%3E%3C/svg%3E");
-}
-
-input[data-task="b"]:checked,
-li[data-task="b"] > input:checked,
-li[data-task="b"] > p > input:checked {
-  color: var(--color-pink);
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z' /%3E%3C/svg%3E");
+  color: var(--color-green);
+  mask-image: url("data:image/svg+xml,%3Csvg%0A%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%0A%20%20width%3D%2224%22%0A%20%20height%3D%2224%22%0A%20%20viewBox%3D%220%200%2024%2024%22%0A%20%20fill%3D%22none%22%0A%20%20stroke%3D%22black%22%0A%20%20stroke-width%3D%222.25%22%0A%20%20stroke-linecap%3D%22round%22%0A%20%20stroke-linejoin%3D%22round%22%0A%3E%0A%20%20%3Cpath%20d%3D%22M12%2022v-4%22%20%2F%3E%0A%20%20%3Cpath%20d%3D%22M7%2012c-1.5%200-4.5%201.5-5%203%203.5%201.5%206%201%206%201-1.5%201.5-2%203.5-2%205%202.5%200%204.5-1.5%206-3%201.5%201.5%203.5%203%206%203%200-1.5-.5-3.5-2-5%200%200%202.5.5%206-1-.5-1.5-3.5-3-5-3%201.5-1%204-4%204-6-2.5%200-5.5%201.5-7%203%200-2.5-.5-5-2-7-1.5%202-2%204.5-2%207-1.5-1.5-4.5-3-7-3%200%202%202.5%205%204%206%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
 /* Priority checkboxes, adapted from r-u-s-h-i-k-e-s-h */
