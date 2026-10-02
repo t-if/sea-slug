@@ -42,12 +42,11 @@
 
 /* ---------- main layout ---------- */
 
-/* --- get rid of dividers that break the theme --- */
+/* --- borderless workspace --- */
 
 body {
   --divider-width: 0px;
-  --line-style: solid;
-  --border-width: 1px;
+  --border-width: 0px;
 }
 
 /* Give the parent element a background color so overlapping panes don't show through */
@@ -66,40 +65,6 @@ body {
 
 .spotlight .workspace-leaf .workspace-leaf-content[data-type='markdown'] {
   transition: opacity 0.25s ease-out;
-}
-
-/* --- line style --- */
-
-body.line-style-solid {
-  --line-style: solid;
-}
-
-body.line-style-dashed {
-  --line-style: dashed;
-}
-
-body.line-style-dotted {
-  --line-style: dotted;
-}
-
-body.line-style-double {
-  --line-style: double;
-}
-
-body.line-style-groove {
-  --line-style: groove;
-}
-
-body.line-style-ridge {
-  --line-style: ridge;
-}
-
-body.line-style-inset {
-  --line-style: inset;
-}
-
-body.line-style-outset {
-  --line-style: outset;
 }
 
 /* --- set background behind main note pane -- */
@@ -125,7 +90,7 @@ body {
 /* -- round some things --- */
 
 body {
-  --border-radius-average: 11px;
+  --border-radius-average: 12px;
   --radius-s: calc(var(--border-radius-average) - 3px);
   --radius-m: calc(var(--border-radius-average) - 1px);
   --radius-l: calc(var(--border-radius-average) + 1px);
@@ -144,7 +109,7 @@ body {
   margin-bottom: 10px;
   margin-right: auto;
   margin-left: auto;
-  border: var(--border-width) var(--line-style) var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-border);
 }
 
 /* --- sidebars --- */
@@ -153,10 +118,9 @@ body {
   --ribbon-background-collapsed: transparent;
 }
 
-/* - get rid of borders in navigation panel on the left sidebar */
+/* Keep the left navigation panel flat. */
 
 .workspace-split.mod-horizontal.mod-left-split .workspace-leaf-content {
-  border: none;
   box-shadow: none;
 }
 
@@ -165,12 +129,6 @@ body {
 .workspace-ribbon.mod-left::before {
   background-color: transparent;
   border-bottom: none;
-}
-
-/* --- make line style effect sidebar --- */
-
-.workspace-ribbon {
-  border-right: var(--divider-width) var(--line-style) var(--divider-color);
 }
 
 /* Give ribbon actions the same quiet resting state as other sidebar controls. */
@@ -182,11 +140,6 @@ body:not(.is-mobile):not(.hide-buttons):not(.hover-expand-ribbon) .workspace-rib
 
 body:not(.is-mobile):not(.hide-buttons):not(.hover-expand-ribbon) .workspace-ribbon.mod-left :is(.side-dock-ribbon-action, .sidebar-toggle-button.mod-left):is(:hover, :focus-visible) {
   opacity: 1;
-}
-
-.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
-.workspace-split.mod-left-split > .workspace-leaf-resize-handle {
-  border-right-style: var(--line-style);
 }
 
 /* Keep the side-dock card edge and its resize handle on the same boundary. */
@@ -368,7 +321,7 @@ body.hide-buttons:not(.is-mobile) .nav-header .nav-buttons-container:is(:hover, 
 
 /* status bar */
 
-/* A floating panel that follows workspace roundness and border visibility. */
+/* A floating panel that follows workspace roundness. */
 body:not(.is-mobile) {
   --status-bar-radius: min(var(--border-radius-average, 12px), 8px);
   --status-bar-border-width: var(--border-width);
@@ -379,7 +332,6 @@ body:not(.is-mobile) {
 body:not(.is-mobile) .status-bar {
   right: 4px;
   bottom: 4px;
-  border-style: var(--line-style);
   max-width: calc(100% - 8px);
   flex-wrap: wrap;
   gap: 2px;
@@ -902,10 +854,6 @@ body.hide-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-sided
 
 /* --- hide buttons --- */
 
-.hide-buttons {
-  --border-width: 0px;
-}
-
 .hide-buttons .view-actions, .hide-buttons .side-dock-settings, .hide-buttons .side-dock-actions, .hide-buttons .sidebar-toggle-button {
   opacity: 0;
 }
@@ -1001,7 +949,7 @@ body.hide-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-sided
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
-  border-bottom: 2px var(--color-accent-2) var(--line-style);
+  border-bottom: 2px var(--color-accent-2) solid;
 }
 
 .theme-dark.theme-default .markdown-rendered mark, .theme-dark.theme-default .cm-s-obsidian span.cm-highlight,
@@ -1014,7 +962,7 @@ body.hide-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-sided
   background-color: transparent;
   border-radius: 0;
   padding: 0;
-  border-bottom: 3px var(--color-accent-2) var(--line-style);
+  border-bottom: 3px var(--color-accent-2) solid;
   font-weight: bold;
 }
 
@@ -1147,18 +1095,12 @@ h1, .markdown-rendered h1, .HyperMD-header-1, .HyperMD-list-line .cm-header-1 {
 .h6-bottom-border h6,
 .h6-bottom-border .HyperMD-header-6 {
   padding-bottom: 2px;
-  border-bottom: 1.4px var(--line-style) var(--hr-color);
+  border-bottom: 1.4px solid var(--hr-color);
 }
 
 /* ==========================================================================
    SECTION 04 — Markdown, tables, rules, tags, links and embeds
    ========================================================================== */
-
-/* --- dividers --- */
-
-body.hide-dividers {
-  --border-width: 0px;
-}
 
 /* --- editor width --- */
 
@@ -1190,7 +1132,7 @@ body {
 }
 
 thead {
-  border-bottom: 1.5px var(--line-style) var(--color-accent-2);
+  border-bottom: 1.5px solid var(--color-accent-2);
 }
 
 .markdown-preview-view table {
@@ -1395,7 +1337,7 @@ body {
   background-color: transparent;
   padding: 12px 12px 12px 12px;
   border-radius: var(--radius-s);
-  border: 1.2px var(--line-style) var(--background-modifier-border);
+  border: 1.2px solid var(--background-modifier-border);
   box-shadow: var(--shadow-s);
   position: relative;
   font-style: normal;
@@ -6153,56 +6095,10 @@ settings:
         level: 1
         collapsed: true
     -
-        id: hide-dividers
-        title: Hide Workspace Dividers
-        type: class-toggle
-        default: true
-    -
         id: spotlight
         title: Dim Inactive Panes
         type: class-toggle
         default: true
-    -
-        id: line-style
-        title: Line Style
-        description: Line style displayed on borders.
-        type: class-select
-        allowEmpty: false
-        default: line-style-solid
-        options:
-            -
-                label: Solid
-                value: line-style-solid
-            -
-                label: Dashed
-                value: line-style-dashed
-            -
-                label: Dotted
-                value: line-style-dotted
-            -
-                label: Double
-                value: line-style-double
-            -
-                label: Groove
-                value: line-style-groove
-            -
-                label: Ridge
-                value: line-style-ridge
-            -
-                label: Inset
-                value: line-style-inset
-            -
-                label: outset
-                value: line-style-outset
-    -
-        id: border-width
-        title: Border Width
-        type: variable-number-slider
-        default: 1.2
-        min: 1
-        max: 2.5
-        step: 0.1
-        format: px
     -
         id: border-radius-average
         title: Border Radius (Roundness)
