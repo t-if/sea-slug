@@ -44,9 +44,12 @@
 
 /* --- borderless workspace --- */
 
-body {
+/* Override Obsidian's high-density phone border defaults as well. */
+body,
+body.is-mobile {
   --divider-width: 0px;
   --border-width: 0px;
+  --tab-outline-width: var(--border-width);
 }
 
 /* Give the parent element a background color so overlapping panes don't show through */
@@ -373,7 +376,6 @@ body {
   --tab-radius-active: var(--radius-s);
   --tab-font-size: 0.84em;
   --tab-width: 240px;
-  --tab-outline-width: var(--border-width);
   --tab-divider-color: transparent;
 }
 

@@ -1,1 +1,1 @@
-Corrected the checkbox icons to use the intended solid set, including the original filled leaf.
+Fixed workspace borders and tab outlines reappearing on mobile.
