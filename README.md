@@ -12,11 +12,27 @@ Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](h
 - Adds styling for Bases, Commander, Calendar, and Kanban.
 - Removes Chime's legacy layouts, background images, `wiki-page`, `novel`, outdated color schemes, Page Gallery, and other obsolete plugin rules.
 - Everything else is labeled under `Obsidian Settings → Style Settings → Sea Slug`.
+- See [Documentation](https://share.note.sx/93dfz98e) for note previews and additional guidance.
+
+
+## Available Palettes
+
+| Palette                     | Light                               | Dark                               | Decoration |
+| --------------------------- | ----------------------------------- | ---------------------------------- | ---------- |
+| West Sea                    | ![](palettes/west-sea-light.png)    | ![](palettes/west-sea-dark.png)    | 💗         |
+| East Sea                    | ![](palettes/east-sea-light.png)    | ![](palettes/east-sea-dark.png)    | 🌎         |
+| Sendoff                     | ![](palettes/sendoff-light.png)     | ![](palettes/sendoff-dark.png)     | 🚬         |
+| Sunyshore                   | ![](palettes/sunyshore-light.png)   | ![](palettes/sunyshore-dark.png)   | ⭐          |
+| Verity                      | ![](palettes/verity-light.png)      | ![](palettes/verity-dark.png)      | 🍃         |
+| Amity (Solarized)           | ![](palettes/amity-light.png)       | ![](palettes/amity-dark.png)       | ☀️         |
+| Coronet (Nord)              | ![](palettes/coronet-light.png)     | ![](palettes/coronet-dark.png)     | ❄️         |
+| Underground (Gruvbox)       | ![](palettes/underground-light.png) | ![](palettes/underground-dark.png) | 🪐         |
+| Ironworks (Obsidian)        | ![](palettes/ironworks-light.png)   | ![](palettes/ironworks-dark.png)   | 🌼         |
+| Windworks (Accent Reactive) | ![](palettes/windworks-light.png)   | ![](palettes/windworks-dark.png)   | 🌼         |
 
 ## Styling Guide
 
 - See callouts, lists, and other note components [here](https://share.note.sx/93dfz98e).
-- See available color schemes [here](/palettes).
 - See Base styles below.
 
 ### Page Classes
@@ -121,6 +137,7 @@ Put the tag inside the list. It is hidden in Reading view.
 
 ### Callouts
 
+
 ```markdown
 > [!polaroid] Polaroid 
 > ![[photograph.jpg]]
@@ -132,6 +149,7 @@ Put the tag inside the list. It is hidden in Reading view.
 > Omit the color metadata to use the purple default.
 ```
 
+
 | Group        | Types or metadata                                                                                                                            |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Other types  | `email`, `conversation`, `conversation-outline`, `conversation-minimalist`, `timeline`, `polaroid`                               |
@@ -142,6 +160,10 @@ Put the tag inside the list. It is hidden in Reading view.
 | Floats       | `left`, `right`, `float-left`, `float-right`; sized forms: `float-left-small` / `float-right-small` (also `medium`, `large`) |
 | Timeline     | `horizontal`, `numbered`, `skip`                                                                                                       |
 | Email        | `sep`                                                                                                                                      |
+
+The images below shows Sea Slug-themed callouts in an assortment of colors, sizes, and arrangements. See also styling for the [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) plugin at the bottom left. 
+
+![](assets/west-sea-garble-text.png)
 
 #### Hover-to-Expand
 
@@ -180,12 +202,6 @@ Alternative checkboxes use solid silhouettes and freestanding symbols, with icon
 | `R`  | Rule        | `m`  | ???       |                   |                 |
 
 Checklist tags also color [Kanban](https://github.com/community-archive/obsidian-kanban) cards.
-
-## Installation
-
-1. Install and enable [BRAT](https://github.com/TfTHacker/obsidian42-brat).
-2. Choose `Add a beta theme` and enter `https://github.com/t-if/sea-slug`.
-3. Select `Sea Slug` under `Settings → Appearance → Themes`.
 
 ## Credits & License
 
