@@ -186,7 +186,7 @@ In multi-column layouts, for example, add `+` to both the outer container and ea
 
 ### Checkboxes
 
-Alternative checkboxes use solid silhouettes and freestanding symbols, with icons adapted from [Lucide](https://lucide.dev/) and [Heroicons](https://heroicons.com/). License notices are included in the theme CSS.
+Alternative checkboxes use icons adapted from [Lucide](https://lucide.dev/) and [Heroicons](https://heroicons.com/). License notices are included in the theme CSS.
 
 | Marker | Meaning     | Marker | Meaning   | Tag               | Meaning         |
 | ------ | ----------- | ------ | --------- | ----------------- | --------------- |
