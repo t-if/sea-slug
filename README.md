@@ -161,7 +161,7 @@ Put the tag inside the list. It is hidden in Reading view.
 | Timeline     | `horizontal`, `numbered`, `skip`                                                                                                       |
 | Email        | `sep`                                                                                                                                      |
 
-The images below shows Sea Slug-themed callouts in an assortment of colors, sizes, and arrangements. See also styling for the [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) plugin at the bottom left. 
+The image below shows Sea Slug-themed callouts in an assortment of colors, sizes, and arrangements. See also styling for the [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) plugin at the bottom left. 
 
 ![](assets/west-sea-garble-text.png)
 
