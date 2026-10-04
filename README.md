@@ -14,8 +14,9 @@ Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](h
 - Everything else is labeled under `Obsidian Settings → Style Settings → Sea Slug`.
 - See [Documentation](https://share.note.sx/93dfz98e) for note previews and additional guidance.
 
-
 ## Available Palettes
+
+Color scheme details are available [here](https://share.note.sx/rweityn2).
 
 | Palette                     | Light                               | Dark                               | Decoration |
 | --------------------------- | ----------------------------------- | ---------------------------------- | ---------- |
