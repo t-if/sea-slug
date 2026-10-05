@@ -14,8 +14,9 @@ Soft colors, flexible callouts, and styled Bases. A practical remix of [Chime](h
 - Everything else is labeled under `Obsidian Settings → Style Settings → Sea Slug`.
 - See [Documentation](https://share.note.sx/93dfz98e) for note previews and additional guidance.
 
-
 ## Available Palettes
+
+Color scheme details are available [here](https://share.note.sx/rweityn2).
 
 | Palette                     | Light                               | Dark                               | Decoration |
 | --------------------------- | ----------------------------------- | ---------------------------------- | ---------- |
@@ -161,7 +162,7 @@ Put the tag inside the list. It is hidden in Reading view.
 | Timeline     | `horizontal`, `numbered`, `skip`                                                                                                       |
 | Email        | `sep`                                                                                                                                      |
 
-The images below shows Sea Slug-themed callouts in an assortment of colors, sizes, and arrangements. See also styling for the [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) plugin at the bottom left. 
+The image below shows Sea Slug-themed callouts in an assortment of colors, sizes, and arrangements. See also styling for the [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) plugin at the bottom left. 
 
 ![](assets/west-sea-garble-text.png)
 
@@ -185,7 +186,7 @@ In multi-column layouts, for example, add `+` to both the outer container and ea
 
 ### Checkboxes
 
-Alternative checkboxes use solid silhouettes and freestanding symbols, with icons adapted from [Lucide](https://lucide.dev/) and [Heroicons](https://heroicons.com/). License notices are included in the theme CSS.
+Alternative checkboxes use icons adapted from [Lucide](https://lucide.dev/) and [Heroicons](https://heroicons.com/). License notices are included in the theme CSS.
 
 | Marker | Meaning     | Marker | Meaning   | Tag               | Meaning         |
 | ------ | ----------- | ------ | --------- | ----------------- | --------------- |
