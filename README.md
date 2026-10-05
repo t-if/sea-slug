@@ -200,6 +200,7 @@ Alternative checkboxes use solid silhouettes and freestanding symbols, with icon
 | `k`  | Key         | `w`  | Win       |                   |                 |
 | `u`  | Up          | `d`  | Down      |                   |                 |
 | `R`  | Rule        | `m`  | ???       |                   |                 |
+| `L`  | Love        |      |           |                   |                 |
 
 Checklist tags also color [Kanban](https://github.com/community-archive/obsidian-kanban) cards.
 
