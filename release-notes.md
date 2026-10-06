@@ -1,3 +1,1 @@
-- Updated for Obsidian 1.14: colored highlights, hover ribbon, readable tooltips, and RTL sidebar support.
-- Refined Bases Cards and Kanban with borderless surfaces, soft shadows, hover lift, and centered titles via `center-card`. Existing card opacity effects are preserved.
-- Added the pink heart checkbox: `- [L]`.
+Restored the original accent-colored tooltip and notice styling. All other 1.1.3 improvements are retained.

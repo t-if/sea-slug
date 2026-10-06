@@ -362,32 +362,10 @@ body:not(.is-mobile) .status-bar-item {
   }
 }
 
-/* Accent-tinted messages; keep the shared token for pre-1.14 compatibility. */
+/* tooltips */
 
 body {
-  --tooltip-background: color-mix(in srgb, var(--background-modifier-message) 95%, transparent);
-  --notice-background: var(--background-modifier-message);
-  --notice-color: var(--tooltip-color);
-}
-
-.theme-light {
-  --background-modifier-message: color-mix(in srgb, var(--interactive-accent) 30%, var(--background-primary));
-  --tooltip-color: color-mix(in srgb, var(--text-normal) 65%, #000);
-}
-
-.theme-dark {
-  --background-modifier-message: color-mix(in srgb, var(--interactive-accent) 25%, #000);
-  --tooltip-color: var(--highlight-text-color);
-}
-
-/* Older Obsidian versions do not consume the new message tokens directly. */
-.tooltip {
-  background-color: var(--tooltip-background);
-  color: var(--tooltip-color);
-}
-
-.notice {
-  color: var(--notice-color);
+  --background-modifier-message: color-mix(in srgb, var(--interactive-accent) 70%, var(--background-primary));
 }
 
 /* --- tabs --- */
