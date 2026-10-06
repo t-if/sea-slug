@@ -121,93 +121,93 @@ body {
   --ribbon-background-collapsed: transparent;
 }
 
-/* Keep the left navigation panel flat. */
+/* Keep the primary navigation panel flat in either workspace direction. */
 
-.workspace-split.mod-horizontal.mod-left-split .workspace-leaf-content {
+.workspace-split.mod-horizontal:is(.mod-primary-split, .mod-left-split:not(.mod-secondary-split)) .workspace-leaf-content {
   box-shadow: none;
 }
 
-/* - Keep the left ribbon's title-bar cap from covering the first tab - */
+/* Keep the primary ribbon's title-bar cap from covering the first tab. */
 
-.workspace-ribbon.mod-left::before {
+.workspace-ribbon:is(.mod-left, .mod-primary)::before {
   background-color: transparent;
   border-bottom: none;
 }
 
 /* Give ribbon actions the same quiet resting state as other sidebar controls. */
 
-body:not(.is-mobile):not(.hide-buttons):not(.hover-expand-ribbon) .workspace-ribbon.mod-left :is(.side-dock-ribbon-action, .sidebar-toggle-button.mod-left) {
+body:not(.is-mobile):not(.hide-buttons):not(.hover-expand-ribbon) .workspace-ribbon:is(.mod-left, .mod-primary) :is(.side-dock-ribbon-action, .sidebar-toggle-button:is(.mod-primary, .mod-left:not(.mod-secondary))) {
   opacity: 0.45;
   transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
-body:not(.is-mobile):not(.hide-buttons):not(.hover-expand-ribbon) .workspace-ribbon.mod-left :is(.side-dock-ribbon-action, .sidebar-toggle-button.mod-left):is(:hover, :focus-visible) {
+body:not(.is-mobile):not(.hide-buttons):not(.hover-expand-ribbon) .workspace-ribbon:is(.mod-left, .mod-primary) :is(.side-dock-ribbon-action, .sidebar-toggle-button:is(.mod-primary, .mod-left:not(.mod-secondary))):is(:hover, :focus-visible) {
   opacity: 1;
 }
 
 /* Keep the side-dock card edge and its resize handle on the same boundary. */
 
-body:not(.is-mobile) .workspace-split.mod-left-split .workspace-leaf {
-  margin-right: 0;
+body:not(.is-mobile) .workspace-split:is(.mod-primary-split, .mod-left-split:not(.mod-secondary-split)) .workspace-leaf {
+  margin-inline-end: 0;
 }
 
-body:not(.is-mobile) .workspace-split.mod-right-split .workspace-leaf {
-  margin-left: 0;
+body:not(.is-mobile) .workspace-split:is(.mod-secondary-split, .mod-right-split:not(.mod-primary-split)) .workspace-leaf {
+  margin-inline-start: 0;
 }
 
-/* --- optional hover-expanding left ribbon --- */
+/* --- optional hover-expanding primary ribbon (mod-left before Obsidian 1.14) --- */
 
 body {
   --gastrodon-ribbon-collapsed-width: 12px;
   --gastrodon-ribbon-expanded-width: var(--ribbon-width, 44px);
 }
 
-body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon.side-dock-ribbon.mod-left {
+body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon:is(.mod-left, .mod-primary) {
   flex-basis: var(--gastrodon-ribbon-collapsed-width);
   overflow: hidden;
   transition: flex-basis 180ms ease;
 }
 
-body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon.side-dock-ribbon.mod-left::before {
+body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon:is(.mod-left, .mod-primary)::before {
   width: var(--gastrodon-ribbon-collapsed-width);
   transition: width 180ms ease;
 }
 
-body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon.side-dock-ribbon.mod-left:is(:hover, :focus-within) {
+body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon:is(.mod-left, .mod-primary):is(:hover, :focus-within) {
   flex-basis: var(--gastrodon-ribbon-expanded-width);
 }
 
-body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon.side-dock-ribbon.mod-left:is(:hover, :focus-within)::before {
+body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon:is(.mod-left, .mod-primary):is(:hover, :focus-within)::before {
   width: var(--gastrodon-ribbon-expanded-width);
 }
 
-body.hover-expand-ribbon:not(.is-mobile):has(.sidebar-toggle-button:not(.mod-right):is(:hover, :focus-visible)) .workspace-ribbon.side-dock-ribbon.mod-left {
+body.hover-expand-ribbon:not(.is-mobile):has(.sidebar-toggle-button:is(.mod-primary, .mod-left:not(.mod-secondary)):is(:hover, :focus-visible)) .workspace-ribbon:is(.mod-left, .mod-primary) {
   flex-basis: var(--gastrodon-ribbon-expanded-width);
 }
 
-body.hover-expand-ribbon:not(.is-mobile):has(.sidebar-toggle-button:not(.mod-right):is(:hover, :focus-visible)) .workspace-ribbon.side-dock-ribbon.mod-left::before {
+body.hover-expand-ribbon:not(.is-mobile):has(.sidebar-toggle-button:is(.mod-primary, .mod-left:not(.mod-secondary)):is(:hover, :focus-visible)) .workspace-ribbon:is(.mod-left, .mod-primary)::before {
   width: var(--gastrodon-ribbon-expanded-width);
 }
 
-body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon.side-dock-ribbon.mod-left :is(.side-dock-actions, .side-dock-settings, .sidebar-toggle-button.mod-left) {
+body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon:is(.mod-left, .mod-primary) :is(.side-dock-actions, .side-dock-settings, .sidebar-toggle-button:is(.mod-primary, .mod-left:not(.mod-secondary))) {
   opacity: 0;
   transition: opacity 540ms ease;
 }
 
-body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon.side-dock-ribbon.mod-left:is(:hover, :focus-within) :is(.side-dock-actions, .side-dock-settings, .sidebar-toggle-button.mod-left) {
+body.hover-expand-ribbon:not(.is-mobile) .workspace-ribbon:is(.mod-left, .mod-primary):is(:hover, :focus-within) :is(.side-dock-actions, .side-dock-settings, .sidebar-toggle-button:is(.mod-primary, .mod-left:not(.mod-secondary))) {
   opacity: 1;
   transition: opacity 540ms ease;
 }
 
-/* Obsidian may place the left sidebar toggle in the tab header instead of inside the ribbon. */
+/* The primary sidebar toggle may live in the tab header instead of the ribbon. */
 
-body.hover-expand-ribbon:not(.is-mobile) .sidebar-toggle-button:not(.mod-right) {
+body.hover-expand-ribbon:not(.is-mobile) .sidebar-toggle-button:is(.mod-primary, .mod-left:not(.mod-secondary)) {
   opacity: 0;
   transition: opacity 540ms ease;
 }
 
-body.hover-expand-ribbon:not(.is-mobile):has(.workspace-ribbon.side-dock-ribbon.mod-left:is(:hover, :focus-within)) .sidebar-toggle-button:not(.mod-right),
-body.hover-expand-ribbon:not(.is-mobile) .sidebar-toggle-button:not(.mod-right):is(:hover, :focus-visible) {
+body.hover-expand-ribbon:not(.is-mobile):has(.workspace-ribbon:is(.mod-left, .mod-primary):is(:hover, :focus-within)) .sidebar-toggle-button:is(.mod-primary, .mod-left:not(.mod-secondary)),
+body.hover-expand-ribbon:not(.is-mobile) .sidebar-toggle-button:is(.mod-primary, .mod-left:not(.mod-secondary)):is(:hover, :focus-visible) {
   opacity: 1;
 }
 
@@ -362,10 +362,32 @@ body:not(.is-mobile) .status-bar-item {
   }
 }
 
-/* tooltips */
+/* Accent-tinted messages; keep the shared token for pre-1.14 compatibility. */
 
 body {
-  --background-modifier-message: color-mix(in srgb, var(--interactive-accent) 70%, var(--background-primary));
+  --tooltip-background: color-mix(in srgb, var(--background-modifier-message) 95%, transparent);
+  --notice-background: var(--background-modifier-message);
+  --notice-color: var(--tooltip-color);
+}
+
+.theme-light {
+  --background-modifier-message: color-mix(in srgb, var(--interactive-accent) 30%, var(--background-primary));
+  --tooltip-color: color-mix(in srgb, var(--text-normal) 65%, #000);
+}
+
+.theme-dark {
+  --background-modifier-message: color-mix(in srgb, var(--interactive-accent) 25%, #000);
+  --tooltip-color: var(--highlight-text-color);
+}
+
+/* Older Obsidian versions do not consume the new message tokens directly. */
+.tooltip {
+  background-color: var(--tooltip-background);
+  color: var(--tooltip-color);
+}
+
+.notice {
+  color: var(--notice-color);
 }
 
 /* --- tabs --- */
@@ -391,12 +413,12 @@ body {
 }
 
 .workspace-tab-header-container {
-  background-color: transparent;
+  --tab-container-background: transparent;
+  --sidebar-tab-container-background: transparent;
+
+  background-color: var(--tab-container-background);
   border-bottom: none;
   margin-bottom: 0.5em;
-}
-
-.workspace-tab-header-container {
   opacity: 1;
 }
 
@@ -844,7 +866,7 @@ body:not(.file-icon-remove).colorful-folder .nav-folder.mod-root>.nav-folder-tit
 /* Hides vault name */
 
 .hide-vault .workspace-sidedock-vault-profile,
-body.hide-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+body.hide-vault:not(.is-mobile) .workspace-split:is(.mod-primary-split, .mod-left-split:not(.mod-secondary-split)) .workspace-sidedock-vault-profile {
   display: none;
 }
 
@@ -910,13 +932,13 @@ body.hide-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-sided
 
 /* --- make sidebar disappear until hover --- */
 
-.ultra-focus .workspace-ribbon.mod-left.is-collapsed {
+.ultra-focus .workspace-ribbon:is(.mod-left, .mod-primary).is-collapsed {
   display: block;
   max-width: 5px;
   opacity: 0;
 }
 
-.ultra-focus .workspace-ribbon.mod-left.is-collapsed:hover {
+.ultra-focus .workspace-ribbon:is(.mod-left, .mod-primary).is-collapsed:hover {
   display: flex;
   max-width: inherit;
   opacity: 1;
@@ -951,25 +973,65 @@ body.hide-vault:not(.is-mobile) .workspace-split.mod-left-split .workspace-sided
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
-  border-bottom: 2px var(--color-accent-2) solid;
+  border-bottom: 2px var(--highlight-underline-color, var(--color-accent-2)) solid;
+}
+
+/* Colored highlights share their solid underline color across both views. */
+.markdown-rendered mark[data-highlight="red"],
+.cm-s-obsidian span.cm-highlight-red {
+  --highlight-underline-color: var(--color-red);
+}
+
+.markdown-rendered mark[data-highlight="orange"],
+.cm-s-obsidian span.cm-highlight-orange {
+  --highlight-underline-color: var(--color-orange);
+}
+
+.markdown-rendered mark[data-highlight="yellow"],
+.cm-s-obsidian span.cm-highlight-yellow {
+  --highlight-underline-color: var(--color-yellow);
+}
+
+.markdown-rendered mark[data-highlight="green"],
+.cm-s-obsidian span.cm-highlight-green {
+  --highlight-underline-color: var(--color-green);
+}
+
+.markdown-rendered mark[data-highlight="cyan"],
+.cm-s-obsidian span.cm-highlight-cyan {
+  --highlight-underline-color: var(--color-cyan);
+}
+
+.markdown-rendered mark[data-highlight="blue"],
+.cm-s-obsidian span.cm-highlight-blue {
+  --highlight-underline-color: var(--color-blue);
+}
+
+.markdown-rendered mark[data-highlight="purple"],
+.cm-s-obsidian span.cm-highlight-purple {
+  --highlight-underline-color: var(--color-purple);
+}
+
+.markdown-rendered mark[data-highlight="pink"],
+.cm-s-obsidian span.cm-highlight-pink {
+  --highlight-underline-color: var(--color-pink);
 }
 
 .theme-dark.theme-default .markdown-rendered mark, .theme-dark.theme-default .cm-s-obsidian span.cm-highlight,
 .theme-dark.theme-celestial .markdown-rendered mark, .theme-dark.theme-celestial .cm-s-obsidian span.cm-highlight,
 .theme-dark.theme-spring .markdown-rendered mark, .theme-dark.theme-spring .cm-s-obsidian span.cm-highlight {
-  color: #fff;
+  color: var(--highlight-text-color);
 }
 
 .underlined-highlight .markdown-rendered mark, .underlined-highlight .cm-s-obsidian span.cm-highlight {
   background-color: transparent;
   border-radius: 0;
   padding: 0;
-  border-bottom: 3px var(--color-accent-2) solid;
-  font-weight: bold;
+  border-bottom: 3px var(--highlight-underline-color, var(--color-accent-2)) solid;
 }
 
 .theme-dark.underlined-highlight .markdown-rendered mark, .theme-dark.underlined-highlight .cm-s-obsidian span.cm-highlight {
-  color: var(--color-accent-2);
+  color: var(--highlight-text-color);
 }
 
 /* ----- active button ----- */
@@ -1303,7 +1365,7 @@ body {
   padding: 10px 15px 10px 15px;
   z-index: 2;
   position: relative;
-  border-left-width: 5px;
+  border-inline-start-width: 5px;
 }
 
 .markdown-rendered blockquote p, .blockquote-normal .markdown-rendered blockquote p {
@@ -1312,7 +1374,7 @@ body {
 
 .blockquote-block .markdown-rendered blockquote {
   border-radius: var(--radius-s);
-  border-left: none;
+  border-inline-start: none;
   font-style: normal;
 }
 
@@ -1351,14 +1413,14 @@ body {
 .blockquote-sleek .markdown-rendered blockquote:not(.blockquote-normal) {
   border: 1px solid;
   border-color: var(--background-modifier-border);
-  border-left-width: 6px;
+  border-inline-start-width: 6px;
   font-style: normal;
 }
 
 .blockquote-basic .markdown-rendered blockquote {
   background-color: transparent;
   border: none;
-  margin-left: 1.3em;
+  margin-inline-start: 1.3em;
   padding: 0;
   font-size: var(--h6-size);
   font-weight: 300;
@@ -1615,7 +1677,7 @@ body {
   text-decoration: none;
   border-radius: var(--radius-m);
   border: var(--aside-border-thickness) solid var(--background-modifier-border);
-  background-color: rgb(var(--background-secondary-alt), var(--aside-bg-opacity));
+  background-color: color-mix(in srgb, var(--background-secondary-alt) calc(var(--aside-bg-opacity) * 100%), transparent);
   padding: 15px;
   margin: 5px;
   width: var(--aside-width);
@@ -1629,7 +1691,7 @@ body {
 .markdown-preview-view .aside-left:hover,
 .markdown-preview-view .aside-right:hover {
   opacity: var(--aside-hover-opacity);
-  background-color: rgb(var(--background-secondary-alt), var(--aside-hover-opacity));
+  background-color: color-mix(in srgb, var(--background-secondary-alt) calc(var(--aside-hover-opacity) * 100%), transparent);
   box-shadow: 0 6px 12px rgb(0 0 0 / 30%);
 }
 
@@ -1788,9 +1850,47 @@ body {
   opacity: 1;
 }
 
+/* Surface separation without an outline, shared by Cards and Kanban. */
+.theme-light {
+  --gastrodon-card-surface: color-mix(in srgb, var(--background-primary) 98.5%, #000);
+  --gastrodon-card-shadow: 0 1px 3px rgb(0 0 0 / 6%), 0 4px 12px rgb(0 0 0 / 6%);
+  --gastrodon-card-shadow-hover: 0 2px 5px rgb(0 0 0 / 8%), 0 8px 18px rgb(0 0 0 / 8%);
+}
+
+.theme-dark {
+  --gastrodon-card-surface: color-mix(in srgb, var(--background-primary) 95%, #fff);
+  --gastrodon-card-shadow: 0 2px 4px rgb(0 0 0 / 18%), 0 6px 16px rgb(0 0 0 / 14%);
+  --gastrodon-card-shadow-hover: 0 3px 6px rgb(0 0 0 / 20%), 0 10px 20px rgb(0 0 0 / 18%);
+}
+
+/* Default Cards share Kanban's elevation; custom card views opt out. */
+body {
+  --bases-cards-border: none;
+  --bases-cards-background: var(--gastrodon-card-surface);
+  --bases-cards-shadow: var(--gastrodon-card-shadow);
+  --bases-cards-shadow-hover: var(--gastrodon-card-shadow-hover);
+  --gastrodon-bases-cards-lift: -2px;
+}
+
 .bases-cards-item {
   opacity: 0.6;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, translate 160ms ease, box-shadow 160ms ease;
+}
+
+@media (hover: hover) {
+  .bases-cards-item:not(.is-being-dragged, .mod-dragged-item):hover {
+    translate: 0 var(--gastrodon-bases-cards-lift);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bases-cards-item {
+    transition: none;
+  }
+
+  .bases-cards-item:not(.is-being-dragged, .mod-dragged-item):hover {
+    translate: none;
+  }
 }
 
 .bases-cards-item:hover {
@@ -1810,7 +1910,101 @@ body {
   display: none;
 }
 
-.center-card .bases-cards-property.mod-title {
+.no-head .bases-kanban-column-count,
+.no-group .bases-kanban-column-count {
+  display: none;
+}
+
+body {
+  --bases-kanban-column-background: var(--background-secondary);
+  --bases-kanban-column-radius: var(--radius-s);
+  --bases-kanban-column-box-shadow: none;
+  --bases-kanban-column-header-background: transparent;
+  --bases-kanban-card-background: var(--gastrodon-card-surface);
+  --bases-kanban-card-radius: var(--radius-s);
+  --bases-kanban-card-shadow: var(--gastrodon-card-shadow);
+  --bases-kanban-card-shadow-hover: var(--gastrodon-card-shadow-hover);
+  --bases-kanban-card-shadow-focus: var(--shadow-m);
+  --bases-kanban-cover-background: var(--background-secondary);
+}
+
+.bases-kanban-column {
+  border-color: transparent;
+}
+
+.bases-kanban-column-header {
+  padding: var(--size-4-3);
+  border-bottom: none;
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-semibold);
+}
+
+/* Independent translation keeps Obsidian's positioning/drag transforms intact. */
+.bases-kanban-card {
+  transition: translate 160ms ease, box-shadow 160ms ease;
+}
+
+@media (hover: hover) {
+  .bases-kanban-card:not(.is-being-dragged, .mod-dragged-item):hover {
+    translate: 0 -2px;
+  }
+}
+
+.bases-kanban-card:not(.is-being-dragged, .mod-dragged-item):focus-visible {
+  translate: 0 -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bases-kanban-card {
+    transition: none;
+  }
+
+  .bases-kanban-card:not(.is-being-dragged, .mod-dragged-item):is(:hover, :focus-visible) {
+    translate: none;
+  }
+}
+
+.bases-kanban-column-header .bases-group-heading {
+  margin-block: 0;
+}
+
+.bases-kanban-column-header .bases-group-value {
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-semibold);
+}
+
+.bases-kanban-card-property.mod-title .bases-kanban-card-line {
+  font-size: var(--font-ui-small);
+}
+
+.bases-kanban-card-label {
+  color: var(--text-faint);
+}
+
+.bases-kanban-column-footer .text-icon-button {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  border-radius: var(--radius-s);
+}
+
+.bases-kanban-column-footer .text-icon-button:is(:hover, :focus-visible) {
+  color: var(--text-accent);
+  background-color: var(--background-modifier-hover);
+}
+
+/* Keep add controls available to keyboard and touch users. */
+.bases-kanban-column-header:focus-within .bases-kanban-column-create {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .bases-kanban-column-create {
+    opacity: 1;
+  }
+}
+
+.center-card .bases-cards-property.mod-title,
+.center-card .bases-kanban-card-property.mod-title {
   text-align: center;
 }
 
@@ -1826,6 +2020,7 @@ body {
 /* mailbox cards */
 
 .mailbox-cards .bases-view {
+  --gastrodon-bases-cards-lift: 0px;
   --mail-pink: var(--color-pink);
   --mail-cyan: var(--color-cyan);
   --mail-border: color-mix(
@@ -1993,6 +2188,7 @@ body {
 }
 
 .frameless-cards .bases-view {
+  --gastrodon-bases-cards-lift: 0px;
   --bases-cards-background: transparent;
   --bases-cards-cover-background: transparent;
   --bases-cards-border: none;
@@ -2022,6 +2218,7 @@ body {
 /* collection cards (pcbox) */
 
 .pcbox .bases-view {
+  --gastrodon-bases-cards-lift: 0px;
   --bases-cards-background: var(--background-secondary);
   --bases-cards-border: 1px solid rgb(255 255 255 / 8%);
   --bases-cards-shadow: 0 4px 12px rgb(0 0 0 / 15%);
@@ -2085,6 +2282,7 @@ body {
 /* Adapted from ProudBenzene's snippet https://gist.github.com/ProudBenzene/19667d8726fb472e4a81f21125fd60e5 */
 
 :is(.workspace-leaf:has([aria-label*="Music"]), .musicshelf) .bases-view {
+  --gastrodon-bases-cards-lift: 0px;
   --bases-cards-background: transparent;
   --bases-cards-cover-background: transparent;
   --bases-cards-shadow: none;
@@ -3893,55 +4091,55 @@ li[data-task="L"] > p > input:checked {
 .markdown-source-view.is-live-preview .HyperMD-list-line-1 .list-number::after {
   content: counter(list-level-1, decimal) ".\00a0";
   visibility: visible;
-  font-size: var(--font-text-size);
+  font-size: var(--font-preferred-size, var(--font-text-size));
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-2 .list-number::after {
   content: counter(list-level-2, lower-alpha) ".\00a0";
   visibility: visible;
-  font-size: var(--font-text-size);
+  font-size: var(--font-preferred-size, var(--font-text-size));
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-3 .list-number::after {
   content: counter(list-level-3, lower-roman) ".\00a0";
   visibility: visible;
-  font-size: var(--font-text-size);
+  font-size: var(--font-preferred-size, var(--font-text-size));
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-4 .list-number::after {
   content: counter(list-level-4, decimal) ".\00a0";
   visibility: visible;
-  font-size: var(--font-text-size);
+  font-size: var(--font-preferred-size, var(--font-text-size));
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-5 .list-number::after {
   content: counter(list-level-5, lower-alpha) ".\00a0";
   visibility: visible;
-  font-size: var(--font-text-size);
+  font-size: var(--font-preferred-size, var(--font-text-size));
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-6 .list-number::after {
   content: counter(list-level-6, lower-roman) ".\00a0";
   visibility: visible;
-  font-size: var(--font-text-size);
+  font-size: var(--font-preferred-size, var(--font-text-size));
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-7 .list-number::after {
   content: counter(list-level-7, decimal) ".\00a0";
   visibility: visible;
-  font-size: var(--font-text-size);
+  font-size: var(--font-preferred-size, var(--font-text-size));
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-8 .list-number::after {
   content: counter(list-level-8, lower-alpha) ".\00a0";
   visibility: visible;
-  font-size: var(--font-text-size);
+  font-size: var(--font-preferred-size, var(--font-text-size));
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-9 .list-number::after {
   content: counter(list-level-9, lower-roman) ".\00a0";
   visibility: visible;
-  font-size: var(--font-text-size);
+  font-size: var(--font-preferred-size, var(--font-text-size));
 }
 
 /* ---------- unordered lists ---------- */
@@ -3951,7 +4149,7 @@ li[data-task="L"] > p > input:checked {
   display: inline-block;
   width: 0.45em;
   height: 0.45em;
-  margin-right: 0.35em;
+  margin-inline-end: 0.35em;
   vertical-align: 0.08em;
   background-color: var(--list-marker-color, var(--text-normal));
   border: 1.5px solid var(--list-marker-color, var(--text-normal));
@@ -4039,7 +4237,7 @@ li[data-task="L"] > p > input:checked {
   display: inline-block;
   width: 0.45em;
   height: 0.45em;
-  margin-right: 0.35em;
+  margin-inline-end: 0.35em;
   vertical-align: 0.08em;
   border: 1.5px solid var(--list-marker-color, var(--text-normal));
   box-sizing: border-box;
@@ -4632,6 +4830,7 @@ body {
 
 .theme-dark {
   --text-highlight-bg: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 30%);
+  --highlight-text-color: color-mix(in srgb, var(--text-normal) 65%, #fff 35%);
   --color-base-05: var(--color-base-20);
 }
 

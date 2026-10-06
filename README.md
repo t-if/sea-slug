@@ -77,12 +77,12 @@ cssclasses: [pcbox, no-fade]
 
 #### Bases Cleanup Classes
 
-| Class               | Effect                                                                                                   |
-| ------------------- | -------------------------------------------------------------------------------------------------------- |
-| `no-fade`         | Keeps other card styles fully opaque without hovering.                                                   |
-| `no-group`         | Hides group property label                                                   |
-| `no-head`         | Hides the embedded Base's toolbar/header; also works with other view types.                              |
-| `center-card`     | Centers card titles.                                                                                     |
+| Class         | Effect                                                                              |
+| ------------- | ----------------------------------------------------------------------------------- |
+| `no-fade`     | Keeps other card styles fully opaque without hovering.                              |
+| `no-group`    | Hides group property label and column count.                                        |
+| `no-head`     | Hides the embedded Base’s toolbar, header, column count, and group property labels. |
+| `center-card` | Centers titles in Card and Kanban views.                                            |
 
 #### Base Formulas
 
