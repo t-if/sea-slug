@@ -1272,25 +1272,6 @@ thead {
   --tag-radius: 3px;
 }
 
-.tag-button {
-  --tag-background: var(--background-primary);
-  --tag-background-hover: var(--code-background);
-  --tag-color: var(--text-normal);
-  --tag-color-hover: var(--text-normal);
-  --tag-radius: 0.8em;
-  --tag-border-color: var(--background-modifier-border);
-  --tag-border-width: 1px;
-  --tag-border-color-hover: var(--color-base-25);
-}
-
-.tag-button a.tag, .tag-button .editor .cm-hashtag {
-  box-shadow: 0 -1px 7px -1px rgb(118 118 118 / 20%) inset;
-}
-
-.tag-button a.tag:hover, .tag-button .editor .cm-hashtag:hover {
-  box-shadow: 0 -1px 7px -1px rgb(118 118 118 / 10%) inset;
-}
-
 /* backlinks */
 
 .embedded-backlinks {
@@ -1364,29 +1345,6 @@ body {
   border-width: 2px;
 }
 
-.blockquote-minimal .markdown-rendered blockquote {
-  background-color: transparent;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-color: var(--text-normal);
-  color: var(--text-normal);
-  font-style: normal;
-  border-width: 1.4px;
-  line-height: inherit;
-}
-
-.blockquote-floating .markdown-rendered blockquote {
-  background-color: transparent;
-  padding: 12px 12px 12px 12px;
-  border-radius: var(--radius-s);
-  border: 1.2px solid var(--background-modifier-border);
-  box-shadow: var(--shadow-s);
-  position: relative;
-  font-style: normal;
-}
-
-.blockquote-sleek .markdown-rendered blockquote:not(.blockquote-floating),
-.blockquote-sleek .markdown-rendered blockquote:not(.blockquote-minimal),
 .blockquote-sleek .markdown-rendered blockquote:not(.blockquote-block),
 .blockquote-sleek .markdown-rendered blockquote:not(.blockquote-normal) {
   border: 1px solid;
@@ -1401,12 +1359,6 @@ body {
   margin-inline-start: 1.3em;
   padding: 0;
   font-size: var(--h6-size);
-  font-weight: 300;
-}
-
-.blockquote-basic .markdown-rendered blockquote h1 {
-  padding: 0;
-  font-style: italic;
   font-weight: 300;
 }
 
@@ -1916,7 +1868,6 @@ body {
   font-weight: var(--font-semibold);
 }
 
-/* Independent translation keeps Obsidian's positioning/drag transforms intact. */
 .bases-kanban-card {
   transition: translate 160ms ease, box-shadow 160ms ease;
 }
@@ -6137,12 +6088,6 @@ settings:
                 label: Obsidian
                 value: blockquote-quote
             -
-                label: Minimalist
-                value: blockquote-minimal
-            -
-                label: Card
-                value: blockquote-floating
-            -
                 label: Sleek
                 value: blockquote-sleek
             -
@@ -6175,9 +6120,6 @@ settings:
             -
                 label: Minimalistic
                 value: tag-minimal
-            -
-                label: Button
-                value: tag-button
     -
         id: clean-embed
         title: Seamless Embedded Links

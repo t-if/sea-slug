@@ -45,7 +45,7 @@ Add these under the note's `cssclasses` property.
 | Width    | `width-800`, `width-900`, `width-1000`, `width-1200`, `width-1600`            |
 | Cleanup  | `no-backlinks`, `no-count`, `no-fold`, `clean-embed`                            |
 | Banners  | `banner`, `banner-fade`                                                             |
-| Bases    | `no-head`, `center-card`, `no-fade`, `no group`, `frameless-cards`, `mailbox-cards`, `pcbox`, `musicshelf`, `washi-kanban` |
+| Bases    | `no-head`, `center-card`, `no-fade`, `no-group`, `frameless-cards`, `mailbox-cards`, `pcbox`, `musicshelf`, `washi-kanban` |
 | Text     | `colorful-headings`, `colorful-headings-alt`, `underlined-highlight`              |
 | Headings | `h1-center`–`h6-center`, `h1-bottom-border`–`h6-bottom-border`                |
 

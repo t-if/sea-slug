@@ -1,1 +1,4 @@
-Restored the original accent-colored tooltip and notice styling. All other 1.1.3 improvements are retained.
+- Added `washi-kanban`: paper cards with torn tape and a subtle lift.
+- Refined mailbox card shadows and embedded Bases header/fade behavior.
+- Removed Minimalist/Card blockquotes and Button tags, including their Style Settings options.
+- Updated Base style documentation and palette previews.
