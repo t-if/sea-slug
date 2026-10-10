@@ -1980,6 +1980,134 @@ body {
   }
 }
 
+/* Washi-taped Kanban cards. */
+.washi-kanban {
+  --washi-paper: color-mix(in srgb, var(--background-primary) 97%, var(--color-yellow));
+  --washi-tape: color-mix(in srgb, var(--color-accent) 32%, var(--background-primary));
+  --washi-contact-shadow: 0 1px 2px rgb(0 0 0 / 4%), 0 3px 6px -3px rgb(0 0 0 / 14%);
+  --washi-hover-shadow: 0 1px 2px rgb(0 0 0 / 4%), 0 4px 7px -3px rgb(0 0 0 / 17%);
+  --bases-kanban-column-background: transparent;
+  --bases-kanban-column-box-shadow: none;
+  --bases-kanban-column-header-background: transparent;
+  --bases-kanban-card-background: var(--washi-paper);
+  --bases-kanban-card-radius: 3px;
+  --bases-kanban-card-shadow: var(--washi-contact-shadow);
+  --bases-kanban-card-shadow-hover: var(--washi-hover-shadow);
+  --bases-kanban-card-shadow-focus: var(--washi-contact-shadow), 0 0 0 2px var(--color-accent);
+  --bases-kanban-cover-background: var(--washi-paper);
+}
+
+.theme-dark .washi-kanban,
+.theme-dark.washi-kanban {
+  --washi-paper: color-mix(in srgb, var(--background-primary) 94%, var(--text-normal));
+  --washi-contact-shadow: 0 1px 2px rgb(0 0 0 / 14%), 0 3px 6px -3px rgb(0 0 0 / 28%);
+  --washi-hover-shadow: 0 1px 2px rgb(0 0 0 / 14%), 0 4px 7px -3px rgb(0 0 0 / 32%);
+}
+
+.washi-kanban .bases-kanban-column {
+  border: none;
+}
+
+.washi-kanban .bases-kanban-column-header {
+  background: transparent;
+}
+
+.washi-kanban .bases-kanban-column-header .bases-group-value {
+  color: var(--text-normal);
+  text-transform: capitalize;
+  font-weight: var(--font-semibold);
+}
+
+.washi-kanban .bases-kanban-column-header .bases-group-value::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-inline-end: 9px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
+  vertical-align: middle;
+}
+
+.washi-kanban .bases-kanban-column-header .bases-group-property,
+.washi-kanban .bases-kanban-card-label {
+  display: none;
+}
+
+.washi-kanban .bases-kanban-column-content {
+  padding-block-start: 14px;
+}
+
+.washi-kanban .bases-kanban-column-inner {
+  gap: 18px;
+}
+
+.washi-kanban .bases-kanban-card {
+  contain: size layout style;
+  overflow: visible;
+  transition: translate 160ms ease, box-shadow 160ms ease;
+  padding: 16px 12px 12px;
+  border: none;
+  background-color: var(--washi-paper);
+  background-image: linear-gradient(
+    color-mix(in srgb, var(--color-accent) 3%, transparent),
+    transparent 80px);
+}
+
+@media (hover: hover) {
+  .washi-kanban .bases-kanban-card:not(.is-being-dragged, .mod-dragged-item):hover {
+    translate: 0 -0.5px;
+  }
+}
+
+.washi-kanban .bases-kanban-card:not(.is-being-dragged, .mod-dragged-item):focus-visible {
+  translate: 0 -0.5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .washi-kanban .bases-kanban-card {
+    transition: none;
+  }
+
+  .washi-kanban .bases-kanban-card:not(.is-being-dragged, .mod-dragged-item):is(:hover, :focus-visible) {
+    translate: none;
+  }
+}
+
+.washi-kanban .bases-kanban-card::after {
+  content: '';
+  z-index: 1;
+  position: absolute;
+  top: -8px;
+  left: calc(50% - 29px);
+  width: 58px;
+  height: 18px;
+  transform: rotate(-3deg);
+  background-color: var(--washi-tape);
+  background-image: repeating-linear-gradient(100deg, transparent 0 3px, rgb(255 255 255 / 8%) 3px 4px);
+  opacity: 0.85;
+  clip-path: polygon(0 0, 100% 0, 97% 20%, 100% 35%, 96% 56%, 100% 80%, 98% 100%, 1% 100%, 4% 78%, 1% 54%, 3% 33%);
+  filter: drop-shadow(0 1px 0.5px rgb(0 0 0 / 6%));
+  pointer-events: none;
+}
+
+.washi-kanban .bases-kanban-card-cover {
+  border-radius: var(--bases-kanban-card-radius) var(--bases-kanban-card-radius) 0 0;
+  background-color: var(--washi-paper);
+}
+
+.washi-kanban .bases-kanban-card-property.mod-title .bases-kanban-card-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: var(--font-semibold);
+}
+
+.washi-kanban .bases-kanban-column-create {
+  opacity: 1;
+}
+
 .center-card .bases-cards-property.mod-title,
 .center-card .bases-kanban-card-property.mod-title {
   text-align: center;
@@ -2000,23 +2128,14 @@ body {
   --gastrodon-bases-cards-lift: 0px;
   --mail-pink: var(--color-pink);
   --mail-cyan: var(--color-cyan);
-  --mail-border: color-mix(
-    in srgb,
-    var(--color-accent) 25%,
-    var(--background-modifier-border)
-  );
   --bases-cards-background: color-mix(
     in srgb,
     var(--background-primary) 96%,
     var(--color-accent) 4%
   );
-  --bases-cards-border: 1px solid var(--mail-border);
-  --bases-cards-shadow:
-    0 1px 3px rgb(0 0 0 / 3.5%),
-    0 4px 12px rgb(0 0 0 / 2.5%);
-  --bases-cards-shadow-hover:
-    0 2px 5px rgb(0 0 0 / 4.5%),
-    0 7px 16px rgb(0 0 0 / 4%);
+  --bases-cards-border: none;
+  --bases-cards-shadow: var(--gastrodon-card-shadow);
+  --bases-cards-shadow-hover: var(--gastrodon-card-shadow-hover);
 }
 
 .mailbox-cards .bases-cards-item {
@@ -2040,16 +2159,10 @@ body {
   box-shadow: var(--bases-cards-shadow);
   transition:
     transform 0.15s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .mailbox-cards .bases-cards-item:hover {
-  border-color: color-mix(
-    in srgb,
-    var(--color-accent) 50%,
-    var(--background-modifier-border-hover)
-  );
   box-shadow: var(--bases-cards-shadow-hover);
   transform: translateY(-1px);
 }

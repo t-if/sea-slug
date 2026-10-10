@@ -45,7 +45,7 @@ Add these under the note's `cssclasses` property.
 | Width    | `width-800`, `width-900`, `width-1000`, `width-1200`, `width-1600`            |
 | Cleanup  | `no-backlinks`, `no-count`, `no-fold`, `clean-embed`                            |
 | Banners  | `banner`, `banner-fade`                                                             |
-| Bases    | `no-head`, `center-card`, `no-fade`, `no group`, `frameless-cards`, `mailbox-cards`, `pcbox`, `musicshelf` |
+| Bases    | `no-head`, `center-card`, `no-fade`, `no group`, `frameless-cards`, `mailbox-cards`, `pcbox`, `musicshelf`, `washi-kanban` |
 | Text     | `colorful-headings`, `colorful-headings-alt`, `underlined-highlight`              |
 | Headings | `h1-center`–`h6-center`, `h1-bottom-border`–`h6-bottom-border`                |
 
@@ -53,7 +53,7 @@ Add these under the note's `cssclasses` property.
 
 ### Bases
 
-Add classes to the note containing the embedded Base, then select a Cards view in the Base. They style the view, not the individual notes listed in it. Classes affect all Bases embedded in that note.
+Add classes to the note containing the embedded Base, then select the matching Cards or Kanban view in the Base. They style the view, not the individual notes listed in it. Classes affect all matching Bases embedded in that note.
 
 ![Bases Page Styles](assets/base-page-styles.png)
 
@@ -66,20 +66,21 @@ cssclasses: [pcbox, no-fade]
 ![[Collection.base]]
 ```
 
-#### Bases Card Styles
+#### Base Styles
 
-| Class               | Effect                                                                                                   |
-| ------------------- | -------------------------------------------------------------------------------------------------------- |
-| `pcbox`           | Collection cards with centered titles and a gentle hover lift.                                           |
-| `musicshelf`      | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view. |
-| `mailbox-cards`   | Airmail cards with hidden property labels; stays fully opaque. See the property names below.             |
-| `frameless-cards` | Cards without any background or container.                                                               |
+| View   | Class             | Effect                                                                                                   | Appearance                                                                                           |
+| ------ | ----------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Card   | `pcbox`           | Collection cards with centered titles and a gentle hover lift.                                           | ![pcbox](assets/cssclass-preview/westsea-pcbox-light.png)                                            |
+| Card   | `musicshelf`      | Album-style covers with a vinyl record behind them; configure an image/cover property in the Cards view. | ![musicshelf](assets/cssclass-preview/westsea-musicshelf-light.png)                                  |
+| Card   | `mailbox-cards`   | Airmail cards with hidden property labels; stays fully opaque. See the property names below.             | ![mailbox-cards](assets/cssclass-preview/westsea-mailboxcards-light.png)                             |
+| Card   | `frameless-cards` | Cards without any background or container.                                                               | ![center-card, frameless-cards](assets/cssclass-preview/westsea-centercard-framelesscards-light.png) |
+| Kanban | `washi-kanban`    | Paper cards with torn washi tape.                                                                        | ![washi-kanban](assets/cssclass-preview/westsea-washikanban-light.png)                               |
 
-#### Bases Cleanup Classes
+#### Base Cleanup Classes
 
 | Class         | Effect                                                                |
 | ------------- | --------------------------------------------------------------------- |
-| `no-fade`     | Keeps other card styles fully opaque without hovering.                |
+| `no-fade`     | Keeps embedded Card view fully opaque without hovering.               |
 | `no-group`    | Hides group property label and column count.                          |
 | `no-head`     | Hides the embedded Base’s toolbar, header, and group property labels. |
 | `center-card` | Centers titles in Card and Kanban views.                              |
@@ -164,7 +165,7 @@ Put the tag inside the list. It is hidden in Reading view.
 
 The image below shows Sea Slug-themed callouts in an assortment of colors, sizes, and arrangements. See also styling for the [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) plugin at the bottom left. 
 
-![](assets/west-sea-garble-text.png)
+![Callout Colors](palettes/west-sea-light.png)
 
 #### Hover-to-Expand
 
@@ -186,7 +187,7 @@ In multi-column layouts, for example, add `+` to both the outer container and ea
 
 ### Checkboxes
 
-Alternative checkboxes use icons adapted from [Lucide](https://lucide.dev/) and [Heroicons](https://heroicons.com/). License notices are included in the theme CSS.
+Alternative checkboxes use icons adapted from [Lucide](https://lucide.dev/) and [Heroicons](https://heroicons.com/).
 
 | Marker | Meaning     | Marker | Meaning   | Tag               | Meaning         |
 | ------ | ----------- | ------ | --------- | ----------------- | --------------- |
