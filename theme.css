@@ -286,6 +286,28 @@ body:not(.is-phone) .modal-bg {
   border: 0;
 }
 
+/* Keep mobile overlays opaque so the underlying note cannot show through. */
+body.is-mobile :is(.modal, .prompt, .menu, .suggestion-container) {
+  opacity: 1;
+  backdrop-filter: none;
+}
+
+body.is-mobile .modal {
+  background-color: var(--modal-background);
+}
+
+body.is-mobile .prompt {
+  background-color: var(--prompt-background);
+}
+
+body.is-mobile .menu {
+  background-color: var(--menu-background);
+}
+
+body.is-mobile .suggestion-container {
+  background-color: var(--suggestion-background);
+}
+
 /* Fade sidebar and pane controls individually instead of brightening the whole toolbar. */
 
 body:not(.is-mobile):not(.hide-buttons) :is(.nav-header .nav-buttons-container, .view-actions) {
@@ -3324,14 +3346,14 @@ body {
 
 /* Shared float behavior: Reading-view aliases from ElsaTam, plus MCL sizing
    and Live Preview support from efemkay. Polaroid keeps only its visual adjustments.
-   The wide-screen reading fallback excludes aliases already positioned above. */
+   Both plain aliases and sized variants float in Reading view. */
 
 body {
   --gastrodon-float-small-width: 300px;
   --gastrodon-float-medium-width: 400px;
   --gastrodon-float-large-width: 600px;
-  --gastrodon-float-left-margin: 0 12px 0 0;
-  --gastrodon-float-right-margin: 0 0 0 12px;
+  --gastrodon-float-left-margin: 0 12px;
+  --gastrodon-float-right-margin: 12px 0;
   --gastrodon-float-top-margin: 0em;
 }
 
@@ -3356,11 +3378,11 @@ body {
     display: none;
   }
 
-  .markdown-reading-view div[data-callout-metadata*="left"].callout:not(.markdown-preview-view [data-callout-metadata~="left"], .markdown-preview-view [data-callout-metadata~="float-left"]) {
+  .markdown-reading-view div[data-callout-metadata*="left"].callout {
     float: left;
   }
 
-  .markdown-reading-view div[data-callout-metadata*="right"].callout:not(.markdown-preview-view [data-callout-metadata~="right"], .markdown-preview-view [data-callout-metadata~="float-right"]) {
+  .markdown-reading-view div[data-callout-metadata*="right"].callout {
     float: right;
   }
 

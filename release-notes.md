@@ -1,4 +1,2 @@
-- Added `washi-kanban`: paper cards with torn tape and a subtle lift.
-- Refined mailbox card shadows and embedded Bases header/fade behavior.
-- Removed Minimalist/Card blockquotes and Button tags, including their Style Settings options.
-- Updated Base style documentation and palette previews.
+- Fixed transparent mobile Settings, search, and menus showing the note underneath.
+- Fixed polaroid callout floats and spacing in Reading view.
