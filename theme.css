@@ -1862,6 +1862,11 @@ body {
   display: none;
 }
 
+.no-head .bases-group-heading.mod-collapsible .collapse-icon,
+.no-group .bases-group-heading.mod-collapsible .collapse-icon{
+  display: none;
+}
+
 .no-group .bases-kanban-column-count {
   display: none;
 }
