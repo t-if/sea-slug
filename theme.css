@@ -4026,10 +4026,22 @@ li[data-task="L"] > p > input:checked {
   list-style-type: lower-roman;
 }
 
-.markdown-source-view.is-live-preview,
+/* Live Preview uses native top-level numbers, including explicit start values.
+   Indented lists retain the decimal / alpha / roman cycle used in Reading view. */
+
+.markdown-source-view.is-live-preview {
+  counter-reset: list-level-2
+    list-level-3
+    list-level-4
+    list-level-5
+    list-level-6
+    list-level-7
+    list-level-8
+    list-level-9;
+}
+
 .markdown-source-view.is-live-preview .cm-line:not(.HyperMD-list-line):has(+ .HyperMD-list-line) {
-  counter-reset: list-level-1
-    list-level-2
+  counter-set: list-level-2
     list-level-3
     list-level-4
     list-level-5
@@ -4042,7 +4054,7 @@ li[data-task="L"] > p > input:checked {
 /* Reset deeper counters when a higher level starts */
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-1 {
-  counter-reset: list-level-2
+  counter-set: list-level-2
     list-level-3
     list-level-4
     list-level-5
@@ -4053,7 +4065,7 @@ li[data-task="L"] > p > input:checked {
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-2 {
-  counter-reset: list-level-3
+  counter-set: list-level-3
     list-level-4
     list-level-5
     list-level-6
@@ -4063,7 +4075,7 @@ li[data-task="L"] > p > input:checked {
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-3 {
-  counter-reset: list-level-4
+  counter-set: list-level-4
     list-level-5
     list-level-6
     list-level-7
@@ -4072,7 +4084,7 @@ li[data-task="L"] > p > input:checked {
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-4 {
-  counter-reset: list-level-5
+  counter-set: list-level-5
     list-level-6
     list-level-7
     list-level-8
@@ -4080,68 +4092,63 @@ li[data-task="L"] > p > input:checked {
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-5 {
-  counter-reset: list-level-6
+  counter-set: list-level-6
     list-level-7
     list-level-8
     list-level-9;
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-6 {
-  counter-reset: list-level-7
+  counter-set: list-level-7
     list-level-8
     list-level-9;
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-7 {
-  counter-reset: list-level-8
+  counter-set: list-level-8
     list-level-9;
 }
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-8 {
-  counter-reset: list-level-9;
+  counter-set: list-level-9;
 }
 
-/* Increment counters */
+/* Increment on editor lines so sibling items share each nesting counter. */
 
-.markdown-source-view.is-live-preview .HyperMD-list-line-1 .list-number {
-  counter-increment: list-level-1;
-}
-
-.markdown-source-view.is-live-preview .HyperMD-list-line-2 .list-number {
+.markdown-source-view.is-live-preview .HyperMD-list-line-2:has(.list-number) {
   counter-increment: list-level-2;
 }
 
-.markdown-source-view.is-live-preview .HyperMD-list-line-3 .list-number {
+.markdown-source-view.is-live-preview .HyperMD-list-line-3:has(.list-number) {
   counter-increment: list-level-3;
 }
 
-.markdown-source-view.is-live-preview .HyperMD-list-line-4 .list-number {
+.markdown-source-view.is-live-preview .HyperMD-list-line-4:has(.list-number) {
   counter-increment: list-level-4;
 }
 
-.markdown-source-view.is-live-preview .HyperMD-list-line-5 .list-number {
+.markdown-source-view.is-live-preview .HyperMD-list-line-5:has(.list-number) {
   counter-increment: list-level-5;
 }
 
-.markdown-source-view.is-live-preview .HyperMD-list-line-6 .list-number {
+.markdown-source-view.is-live-preview .HyperMD-list-line-6:has(.list-number) {
   counter-increment: list-level-6;
 }
 
-.markdown-source-view.is-live-preview .HyperMD-list-line-7 .list-number {
+.markdown-source-view.is-live-preview .HyperMD-list-line-7:has(.list-number) {
   counter-increment: list-level-7;
 }
 
-.markdown-source-view.is-live-preview .HyperMD-list-line-8 .list-number {
+.markdown-source-view.is-live-preview .HyperMD-list-line-8:has(.list-number) {
   counter-increment: list-level-8;
 }
 
-.markdown-source-view.is-live-preview .HyperMD-list-line-9 .list-number {
+.markdown-source-view.is-live-preview .HyperMD-list-line-9:has(.list-number) {
   counter-increment: list-level-9;
 }
 
-/* Hide Obsidian's default rendered numbers */
+/* Keep native top-level numbers; replace only indented list markers. */
 
-.markdown-source-view.is-live-preview .HyperMD-list-line-1 .list-number,
 .markdown-source-view.is-live-preview .HyperMD-list-line-2 .list-number,
 .markdown-source-view.is-live-preview .HyperMD-list-line-3 .list-number,
 .markdown-source-view.is-live-preview .HyperMD-list-line-4 .list-number,
@@ -4155,12 +4162,6 @@ li[data-task="L"] > p > input:checked {
 }
 
 /* Replace with looping custom numbering */
-
-.markdown-source-view.is-live-preview .HyperMD-list-line-1 .list-number::after {
-  content: counter(list-level-1, decimal) ".\00a0";
-  visibility: visible;
-  font-size: var(--font-preferred-size, var(--font-text-size));
-}
 
 .markdown-source-view.is-live-preview .HyperMD-list-line-2 .list-number::after {
   content: counter(list-level-2, lower-alpha) ".\00a0";

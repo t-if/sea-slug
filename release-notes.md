@@ -1,2 +1,3 @@
-- Fixed transparent mobile Settings, search, and menus showing the note underneath.
-- Fixed polaroid callout floats and spacing in Reading view.
+- Fixed top-level numbered lists in Live Preview by preserving Obsidian's native numbering.
+- Retained indented alphabetic and Roman numeral styles in Live Preview, with corrected counter progression and resets.
+- Hid collapse icons in Bases layouts using the no-group or no-head CSS classes.
